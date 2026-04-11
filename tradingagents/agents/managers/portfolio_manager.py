@@ -81,6 +81,7 @@ Be decisive. Ground conclusions in specific evidence. Your value is independent 
             "current_aggressive_response": risk_debate_state["current_aggressive_response"],
             "current_conservative_response": risk_debate_state["current_conservative_response"],
             "current_neutral_response": risk_debate_state["current_neutral_response"],
+            "judge_decision": response.content,
             "count": risk_debate_state["count"],
         }
 
