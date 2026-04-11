@@ -15,6 +15,7 @@ def create_quant_analyst(llm):
     def quant_analyst_node(state):
         current_date = state["trade_date"]
         instrument_context = build_instrument_context(state["company_of_interest"])
+        verified_data = state.get("verified_data", "")
 
         tools = [
             get_stock_data,
@@ -26,6 +27,10 @@ def create_quant_analyst(llm):
 
         system_message = (
             "You are a QUANTITATIVE analyst. You work ONLY with numbers — no narratives, no stories, no qualitative opinions."
+            "\n\nCRITICAL: If VERIFIED GROUND-TRUTH DATA is provided in the context, you MUST use those exact"
+            " values for Current Price, 50-day SMA, 200-day SMA, RSI (14), 6-month return, and ATR."
+            " Do NOT recompute these metrics from raw data — use the verified figures as-is in your scorecard."
+            " For all other metrics (P/E, EV/EBITDA, Revenue Growth, FCF Yield, etc.), use your tools normally."
             "\n\nYour job is to produce a structured numerical scorecard for the given stock. You must:"
             "\n1. Retrieve the stock's price data for the last 6 months."
             "\n2. Retrieve key technical indicators: RSI (14-day), MACD (12,26,9), 50-day SMA, 200-day SMA."
@@ -87,7 +92,9 @@ def create_quant_analyst(llm):
                     " If you or any other assistant has the FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** or deliverable,"
                     " prefix your response with FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** so the team knows to stop."
                     " You have access to the following tools: {tool_names}.\n{system_message}"
-                    "For your reference, the current date is {current_date}. {instrument_context}",
+                    "\n\nCRITICAL — TODAY'S TRADING DATE IS {current_date}."
+                    " All dates in your report MUST reference this exact date (year, month, day)."
+                    " {instrument_context}\n\n{verified_data}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),
             ]
@@ -97,6 +104,7 @@ def create_quant_analyst(llm):
         prompt = prompt.partial(tool_names=", ".join([tool.name for tool in tools]))
         prompt = prompt.partial(current_date=current_date)
         prompt = prompt.partial(instrument_context=instrument_context)
+        prompt = prompt.partial(verified_data=verified_data)
 
         chain = prompt | llm.bind_tools(tools)
 

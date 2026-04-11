@@ -201,14 +201,14 @@ class TradingAgentsGraph:
             ),
         }
 
-    def propagate(self, company_name, trade_date):
+    def propagate(self, company_name, trade_date, verified_data=""):
         """Run the trading agents graph for a company on a specific date."""
 
         self.ticker = company_name
 
         # Initialize state
         init_agent_state = self.propagator.create_initial_state(
-            company_name, trade_date
+            company_name, trade_date, verified_data
         )
         args = self.propagator.get_graph_args()
 

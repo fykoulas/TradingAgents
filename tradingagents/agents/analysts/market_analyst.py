@@ -13,6 +13,7 @@ def create_market_analyst(llm):
     def market_analyst_node(state):
         current_date = state["trade_date"]
         instrument_context = build_instrument_context(state["company_of_interest"])
+        verified_data = state.get("verified_data", "")
 
         tools = [
             get_stock_data,
@@ -60,7 +61,11 @@ Volume-Based Indicators:
                     " If you or any other assistant has the FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** or deliverable,"
                     " prefix your response with FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** so the team knows to stop."
                     " You have access to the following tools: {tool_names}.\n{system_message}"
-                    "For your reference, the current date is {current_date}. {instrument_context}",
+                    "\n\nCRITICAL — TODAY'S TRADING DATE IS {current_date}."
+                    " All dates in your report MUST reference this exact date (year, month, day)."
+                    " The last row in any OHLCV dataset is the most recent trading day"
+                    " — use its Close as the current market price."
+                    " {instrument_context}\n\n{verified_data}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),
             ]
@@ -70,6 +75,7 @@ Volume-Based Indicators:
         prompt = prompt.partial(tool_names=", ".join([tool.name for tool in tools]))
         prompt = prompt.partial(current_date=current_date)
         prompt = prompt.partial(instrument_context=instrument_context)
+        prompt = prompt.partial(verified_data=verified_data)
 
         chain = prompt | llm.bind_tools(tools)
 

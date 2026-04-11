@@ -35,7 +35,9 @@ def create_news_analyst(llm):
                     " If you or any other assistant has the FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** or deliverable,"
                     " prefix your response with FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** so the team knows to stop."
                     " You have access to the following tools: {tool_names}.\n{system_message}"
-                    "For your reference, the current date is {current_date}. {instrument_context}",
+                    "\n\nCRITICAL — TODAY'S TRADING DATE IS {current_date}."
+                    " All dates in your report MUST reference this exact date (year, month, day)."
+                    " {instrument_context}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),
             ]
