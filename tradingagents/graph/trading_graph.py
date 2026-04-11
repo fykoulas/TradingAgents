@@ -45,7 +45,7 @@ class TradingAgentsGraph:
 
     def __init__(
         self,
-        selected_analysts=["market", "social", "news", "fundamentals"],
+        selected_analysts=["market", "social", "news", "fundamentals", "quant"],
         debug=False,
         config: Dict[str, Any] = None,
         callbacks: Optional[List] = None,
@@ -186,6 +186,16 @@ class TradingAgentsGraph:
                     get_fundamentals,
                     get_balance_sheet,
                     get_cashflow,
+                    get_income_statement,
+                ]
+            ),
+            "quant": ToolNode(
+                [
+                    # Quantitative analysis tools (numbers only)
+                    get_stock_data,
+                    get_indicators,
+                    get_fundamentals,
+                    get_balance_sheet,
                     get_income_statement,
                 ]
             ),
