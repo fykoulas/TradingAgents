@@ -65,6 +65,9 @@ Volume-Based Indicators:
                     " All dates in your report MUST reference this exact date (year, month, day)."
                     " The last row in any OHLCV dataset is the most recent trading day"
                     " — use its Close as the current market price."
+                    "\n\nIMPORTANT: If VERIFIED GROUND-TRUTH DATA is provided below, use those exact"
+                    " values for RSI, 50-day SMA, 200-day SMA, ATR, and 6-month return in your report."
+                    " Do NOT substitute tool-computed values that differ from the verified data."
                     " {instrument_context}\n\n{verified_data}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),

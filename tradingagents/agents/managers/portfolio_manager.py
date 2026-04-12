@@ -14,6 +14,7 @@ def create_portfolio_manager(llm, memory):
         sentiment_report = state["sentiment_report"]
         research_plan = state["investment_plan"]
         trader_plan = state["trader_investment_plan"]
+        verified_data = state.get("verified_data", "")
 
         curr_situation = f"{market_research_report}\n\n{sentiment_report}\n\n{news_report}\n\n{fundamentals_report}"
         past_memories = memory.get_memories(curr_situation, n_matches=2)
@@ -25,6 +26,17 @@ def create_portfolio_manager(llm, memory):
         prompt = f"""You are the Portfolio Manager — the FINAL decision-maker with fiduciary authority over capital allocation. Your job is NOT to summarize the risk debate. Your job is to render an independent, portfolio-level verdict that may AGREE or DISAGREE with the risk analysts.
 
 {instrument_context}
+
+{verified_data}
+
+---
+
+**QUANTITATIVE GUARDRAILS (hard rules — override narrative):**
+Before issuing any rating, evaluate these conditions against the verified data above:
+1. **Trend Filter**: If price is >10% below the 200-day SMA, the stock is in a confirmed downtrend. A BUY rating requires EXPLICIT identification of a reversal catalyst (not just "long-term potential") and must be accompanied by a tight stop-loss. If no reversal signal exists, the maximum rating is HOLD.
+2. **Valuation Discipline**: If P/E (TTM) > 40 AND the stock is in a downtrend (per rule 1), a BUY is NOT permitted. High-multiple stocks in downtrends carry extreme risk of multiple compression.
+3. **Momentum Confirmation**: If RSI < 40 AND price is below both 50-day and 200-day SMA, the stock is in bearish momentum. BUY requires a confirmed reversal signal (RSI divergence, SMA crossover, or price reclaiming 50-SMA).
+4. **If any guardrail blocks a BUY**, you MUST downgrade to HOLD or lower and state which guardrail was triggered.
 
 ---
 
@@ -39,6 +51,7 @@ def create_portfolio_manager(llm, memory):
 - Do not simply restate the risk analysts' conclusions.
 - Do not default to their consensus. Challenge it.
 - Do not rubber-stamp. If you agree, explain WHY from your own analysis.
+- Do not issue a BUY that violates any quantitative guardrail above.
 
 ---
 

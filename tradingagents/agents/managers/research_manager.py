@@ -10,6 +10,7 @@ def create_research_manager(llm, memory):
         sentiment_report = state["sentiment_report"]
         news_report = state["news_report"]
         fundamentals_report = state["fundamentals_report"]
+        verified_data = state.get("verified_data", "")
 
         investment_debate_state = state["investment_debate_state"]
 
@@ -23,6 +24,17 @@ def create_research_manager(llm, memory):
         prompt = f"""As the Research Manager, your role is to critically evaluate the bull/bear debate and deliver a definitive investment recommendation.
 
 {instrument_context}
+
+{verified_data}
+
+---
+
+**QUANTITATIVE REALITY CHECK (evaluate BEFORE reading the debate):**
+Review the verified market data above. Before proceeding, answer:
+- Is the stock above or below the 200-day SMA? By how much?
+- What is the 6-month return?
+- Is the RSI indicating oversold (<30), neutral (30-70), or overbought (>70)?
+A BUY recommendation on a stock that is >10% below the 200-day SMA with no confirmed reversal signal requires EXCEPTIONAL justification beyond narrative conviction.
 
 ---
 
