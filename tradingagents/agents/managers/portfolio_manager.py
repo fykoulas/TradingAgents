@@ -82,6 +82,21 @@ Before issuing any rating, evaluate these conditions against the verified data a
 
 ---
 
+9. **Forward P/E Provenance**: If the verified data shows NEGATIVE trailing EPS and
+   a Forward P/E based on forward EPS estimates:
+   - Check: did the analysts state the SOURCE of the forward EPS estimate (consensus
+     analyst count, management guidance)?
+   - Check: did they establish a credible path to profitability?
+   - If analyst coverage is <5 estimates, forward P/E has LOW reliability. Do not use
+     it as the primary valuation anchor.
+   - If any report calls the stock 'undervalued' while the Forward P/E is at a PREMIUM
+     to peer median, that is a CONTRADICTION. You MUST resolve it or downgrade to Hold.
+   - For turnaround stocks (trailing EPS negative → forward EPS positive), the relevant
+     question is NOT 'what P/E is appropriate' but 'will the turnaround happen?' If the
+     reports fail to address this, the thesis is INCOMPLETE — maximum rating is Hold.
+
+---
+
 **Your Unique Mandate (what ONLY you evaluate):**
 - **Capital efficiency**: Is this the best use of marginal capital vs. holding cash or other opportunities?
 - **Entry timing**: Is the risk/reward attractive RIGHT NOW, or should we wait for a better price?

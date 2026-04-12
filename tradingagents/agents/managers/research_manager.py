@@ -127,6 +127,26 @@ If it cannot be justified, downgrade to HOLD.
 
 ---
 
+**FORWARD P/E CONTRADICTION CHECK (MANDATORY):**
+Scan ALL analyst reports for conflicting valuation conclusions:
+1. If the fundamentals analyst's peer table shows the target trading at a FORWARD P/E PREMIUM
+   to peers (target Fwd P/E > peer median Fwd P/E), but any section of the report (Bull Thesis,
+   your own recommendation) characterises the stock as 'undervalued compared to peers' or
+   'attractively priced,' flag this as a CONTRADICTION.
+2. A stock trading at a forward P/E premium is MORE EXPENSIVE than peers on expected earnings —
+   it can only be 'undervalued' if a DIFFERENT metric (e.g., EV/Revenue, operating margin
+   discount) is explicitly cited AND that metric is argued to be more relevant than forward P/E.
+3. If trailing EPS is negative but forward P/E exists, the forward P/E is based on TURNAROUND
+   expectations. The analyst must have stated the source and credibility of the forward EPS
+   estimate. If this is missing, flag it: 'Forward P/E of X is cited without EPS provenance.'
+4. Check analyst coverage count from verified data. If <5 analysts and the recommendation leans
+   heavily on forward P/E, flag: 'Forward valuation anchor is based on thin analyst coverage.'
+5. Reconcile the contradiction explicitly: state which metric supports 'undervalued,' which
+   supports 'premium,' and WHICH ONE YOU WEIGHT MORE and why.
+   Generic 'undervalued' without resolving the forward P/E premium is an ANALYTICAL ERROR.
+
+---
+
 **VALUATION CONSISTENCY CHECK:**
 Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic valuations.
 1. List every fair value figure mentioned across all reports (fundamentals, quant, debate).
