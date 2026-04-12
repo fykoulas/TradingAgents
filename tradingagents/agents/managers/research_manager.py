@@ -240,6 +240,21 @@ Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic val
 ---
 
 **DCF vs GROWTH GAP RECONCILIATION (MANDATORY — do this BEFORE your recommendation):**
+
+**NEGATIVE-FCF OVERRIDE**: If the verified data shows 'Growth Gap: N/A — NEGATIVE FCF'
+or the quant reports Growth Gap as N/A due to negative FCF, the entire Growth Gap
+framework is INAPPLICABLE. The reverse DCF produces meaningless results when FCF is
+negative. In this case:
+- Do NOT cite Growth Gap as evidence of over/underpricing.
+- Do NOT attempt to reconcile DCF vs Growth Gap — there is no Growth Gap to reconcile.
+- Instead, check whether the fundamentals analyst used an ALTERNATIVE valuation model
+  (EV/Revenue, revenue trajectory DCF, probability-weighted NPV). If they used a standard
+  FCF-based DCF with negative base FCF, flag as ANALYTICAL ERROR — the model produces
+  negative fair values and is structurally invalid.
+- State: 'Growth Gap: N/A (negative FCF — reverse DCF invalid). Valuation assessed via
+  [EV/Revenue / revenue trajectory / pipeline NPV].'
+- Skip the reconciliation rules below and proceed to the FCF Reliability Check.
+
 The Growth Gap (from the quant) and the DCF fair value (from the fundamentals analyst) both
 measure whether the stock is over/underpriced, but using different methodologies. They MUST
 point in the same direction. If they contradict, you MUST resolve the conflict explicitly.
@@ -291,6 +306,12 @@ Scan the verified data for FCF DECOMPOSITION fields. If present, check the follo
    FCF-based DCF. Check that a revenue-based or earnings-power model was used instead.
    If the analyst used a DCF with turnaround FCF data, the valuation is UNRELIABLE —
    flag it and state that the recommendation cannot rely on the DCF fair value.
+   **Negative-FCF Model Selection**: If the verified data flags 'NEGATIVE FCF — REVERSE DCF
+   INVALID', check that the fundamentals analyst used an ALTERNATIVE model (EV/Revenue,
+   revenue trajectory DCF, probability-weighted NPV). A standard DCF sensitivity table
+   using negative base FCF (producing Bear/Base/Bull fair values) is STRUCTURALLY INVALID.
+   If the analyst presented such a table, flag as ANALYTICAL ERROR and state that the
+   valuation conclusions derived from it are UNRELIABLE.
 4. **FCF Reconciliation Table**: Check that the fundamentals report includes a reconciliation
    table showing TTM FCF, info.freeCashflow, discrepancy %, quarterly CV, base FCF used,
    and model chosen. If missing, flag as an analytical gap.
@@ -382,6 +403,9 @@ by the DCF — the market is not overpricing, it is pricing modest acceleration.
 If Growth Gap < -5pp: state that the market underestimates the company's growth trajectory —
 this is a TAILWIND supporting a BUY case.
 If the quant could not compute a Growth Gap (N/A), state that and note the limitation.
+If the reason is NEGATIVE FCF: state 'Growth Gap: N/A — FCF is negative; reverse DCF
+framework invalid. Valuation assessed via [EV/Revenue / revenue trajectory].' and show
+the EV/Revenue multiple and cash runway instead of Growth Gap metrics.
 
 ---
 
