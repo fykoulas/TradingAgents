@@ -53,6 +53,20 @@ def create_news_analyst(llm):
             "  3. The Company-Specific Developments section should say 'None detected' — not be"
             "     replaced with Nvidia, Tesla, ETF, or generic market articles.\n"
             "  4. A short, honest report is ALWAYS better than a long fabricated one.\n"
+            "\n=== DATA PIPELINE FAILURE ESCALATION ===\n"
+            "If the data is tagged [DATA PIPELINE FAILURE], this means BOTH ticker-based AND\n"
+            "company-name searches returned zero results for a company with significant market\n"
+            "capitalisation. This is almost certainly a data source failure, NOT genuine silence.\n"
+            "You MUST:\n"
+            "  1. Open with a clear **⚠ Data Quality Warning** section BEFORE any analysis.\n"
+            "  2. State: 'NEWS DATA UNAVAILABLE — data pipeline returned zero articles for a\n"
+            "     [market cap] company. This is a data source failure, not evidence of market\n"
+            "     silence. All news-dependent conclusions in this report are UNRELIABLE.'\n"
+            "  3. Do NOT provide a bullish/bearish recommendation based on absent data.\n"
+            "  4. Your Summary Table must include a row: 'Data Pipeline Failure | N/A | Cannot\n"
+            "     assess news-driven risk | INCONCLUSIVE'\n"
+            "  5. End with: 'RECOMMENDATION IMPACT: News assessment is INCOMPLETE. Portfolio\n"
+            "     manager should verify news flow through an independent source before acting.'\n"
             "\nBANNED PHRASES (using these when you have no company data is a CRITICAL FAILURE):\n"
             "  'typically', 'generally', 'likely', 'probably', 'usually', 'tends to',"
             "  'common for', 'one would expect', 'similar companies', 'in most cases',"
@@ -70,7 +84,8 @@ def create_news_analyst(llm):
         # Pre-fetched data mode: inject data, skip tool round-trips
         if prefetched.get("company_news"):
             data_block = (
-                "\n\n=== PRE-FETCHED COMPANY NEWS ===\n"
+                "\n\n" + prefetched.get("company_profile", "")
+                + "\n\n=== PRE-FETCHED COMPANY NEWS ===\n"
                 + prefetched["company_news"]
                 + "\n\n=== PRE-FETCHED GLOBAL / MACRO NEWS ===\n"
                 + prefetched.get("global_news", "N/A")

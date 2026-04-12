@@ -101,7 +101,8 @@ After computing Price vs 200-SMA %, you MUST assess extension risk:
         # Pre-fetched data mode: inject data, skip tool round-trips
         if prefetched.get("stock_data"):
             data_block = (
-                "\n\n=== PRE-FETCHED STOCK PRICE DATA (OHLCV) ===\n"
+                "\n\n" + prefetched.get("company_profile", "")
+                + "\n\n=== PRE-FETCHED STOCK PRICE DATA (OHLCV) ===\n"
                 + prefetched["stock_data"]
                 + "\n\n=== PRE-FETCHED TECHNICAL INDICATORS ===\n"
                 + prefetched.get("indicators", "N/A")

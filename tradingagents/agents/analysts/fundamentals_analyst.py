@@ -175,7 +175,8 @@ def create_fundamentals_analyst(llm):
         # Pre-fetched data mode: inject data, skip tool round-trips
         if prefetched.get("fundamentals"):
             data_block = (
-                "\n\n=== PRE-FETCHED FUNDAMENTALS ===\n"
+                "\n\n" + prefetched.get("company_profile", "")
+                + "\n\n=== PRE-FETCHED FUNDAMENTALS ===\n"
                 + prefetched["fundamentals"]
                 + "\n\n=== PRE-FETCHED BALANCE SHEET (Quarterly) ===\n"
                 + prefetched.get("balance_sheet", "N/A")

@@ -30,9 +30,9 @@ def create_quant_analyst(llm):
         system_message = (
             "You are a QUANTITATIVE analyst. You work ONLY with numbers — no narratives, no stories, no qualitative opinions."
             "\n\nCRITICAL: If VERIFIED GROUND-TRUTH DATA is provided in the context, you MUST use those exact"
-            " values for Current Price, 50-day SMA, 200-day SMA, RSI (14), 6-month return, and ATR."
+            " values for Current Price, 50-day SMA, 200-day SMA, RSI (14), 6-month return, ATR, Revenue Growth (YoY), and Earnings Growth (YoY)."
             " Do NOT recompute these metrics from raw data — use the verified figures as-is in your scorecard."
-            " For all other metrics (P/E, EV/EBITDA, Revenue Growth, FCF Yield, etc.), use your tools normally."
+            " For all other metrics (P/E, EV/EBITDA, FCF Yield, etc.), use your tools normally."
             "\n\nSECTOR-SPECIFIC METRIC RULES (MANDATORY):"
             "\nBEFORE filling the Financial Health table, identify the company's GICS sector and sub-industry from the fundamentals data."
             " For the following sectors, standard ratios"
@@ -89,7 +89,7 @@ def create_quant_analyst(llm):
             "\n### Financial Health"
             "\n| Metric | Value |"
             "\n|--------|-------|"
-            "\n| Revenue Growth (YoY) | X% |"
+            "\n| Revenue Growth (YoY) | (use VERIFIED value if provided — do NOT compute your own) |"
             "\n| FCF Yield | X% |"
             "\n| Debt-to-Equity | |"
             "\n| Current Ratio | |"
@@ -159,7 +159,8 @@ def create_quant_analyst(llm):
         # Pre-fetched data mode: inject data, skip tool round-trips
         if prefetched.get("stock_data"):
             data_block = (
-                "\n\n=== PRE-FETCHED STOCK PRICE DATA (OHLCV) ===\n"
+                "\n\n" + prefetched.get("company_profile", "")
+                + "\n\n=== PRE-FETCHED STOCK PRICE DATA (OHLCV) ===\n"
                 + prefetched["stock_data"]
                 + "\n\n=== PRE-FETCHED TECHNICAL INDICATORS ===\n"
                 + prefetched.get("indicators", "N/A")
