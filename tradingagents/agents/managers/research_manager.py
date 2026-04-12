@@ -58,6 +58,22 @@ A BUY recommendation on a stock that is >10% below the 200-day SMA with no confi
 
 ---
 
+**PRICED-IN CHECK (evaluate BEFORE your recommendation):**
+If the 6-month return is >50% AND the stock is near its 52-week high (within 10%):
+1. You MUST explicitly ask: 'Has the bull thesis already been priced in by the recent move?'
+2. A stock that has appreciated 80% in 6 months has likely already captured the near-term catalysts.
+   Citing recent momentum or strong returns as reasons to BUY is CIRCULAR LOGIC.
+   Momentum describes what ALREADY happened, not what will happen next.
+3. To recommend BUY after a >50% 6-month run, you must identify SPECIFIC additional catalysts
+   that have NOT yet been priced in, and quantify the remaining upside.
+4. If the quant analyst's Implied Expectations section shows the market is pricing in growth
+   that exceeds the company's historical rate, that is a red flag — not a buying opportunity.
+5. Treat the fundamentals analyst's Reverse Valuation Check and the quant's Implied Growth Gap
+   as key inputs. If both flag 'priced for perfection' or 'stretched,' BUY requires extraordinary
+   justification (e.g., a specific earnings catalyst in the next 30 days with quantifiable impact).
+
+---
+
 **MANDATORY — Dissent Section (do this FIRST, before your recommendation):**
 Before stating your recommendation, you MUST complete this structured dissent analysis:
 

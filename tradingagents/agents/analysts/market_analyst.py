@@ -63,7 +63,25 @@ ATR in dollars is meaningless without context. You MUST compute and report:
 Volume-Based Indicators:
 - vwma: VWMA: A moving average weighted by volume. Usage: Confirm trends by integrating price action with volume data. Tips: Watch for skewed results from volume spikes; use in combination with other volume analyses.
 
-- Select indicators that provide diverse and complementary information. Avoid redundancy (e.g., do not select both rsi and stochrsi). Also briefly explain why they are suitable for the given market context. When you tool call, please use the exact name of the indicators provided above as they are defined parameters, otherwise your call will fail. Please make sure to call get_stock_data first to retrieve the CSV that is needed to generate indicators. Then use get_indicators with the specific indicator names. Write a very detailed and nuanced report of the trends you observe. Provide specific, actionable insights with supporting evidence to help traders make informed decisions."""
+- Select indicators that provide diverse and complementary information. Avoid redundancy (e.g., do not select both rsi and stochrsi). Also briefly explain why they are suitable for the given market context. When you tool call, please use the exact name of the indicators provided above as they are defined parameters, otherwise your call will fail. Please make sure to call get_stock_data first to retrieve the CSV that is needed to generate indicators. Then use get_indicators with the specific indicator names. Write a very detailed and nuanced report of the trends you observe. Provide specific, actionable insights with supporting evidence to help traders make informed decisions.
+
+PRICE EXTENSION ANALYSIS (MANDATORY):
+After computing Price vs 200-SMA %, you MUST assess extension risk:
+1. Compute the % distance from the 200-day SMA. If >40%, the stock is EXTENDED.
+2. If the 6-month return is >50%, the stock has had an EXCEPTIONAL run.
+3. When BOTH conditions are true (>40% above 200-SMA AND >50% 6-month return):
+   - You MUST include a '### Price Extension Warning' section.
+   - State explicitly: 'At X% above the 200-SMA with a Y% 6-month return, this stock
+     is trading at levels that historically carry elevated mean-reversion risk.'
+   - Do NOT treat momentum as a reason to buy. A stock that has already moved +80%
+     may have already priced in the thesis. Momentum is descriptive, not predictive.
+   - Ask: 'What further catalyst exists to justify buying AFTER an X% move?'
+   - Note the gap between current price and 50-SMA as a pullback risk zone.
+4. If Price vs 200-SMA > 20% but < 40%, note the extension but it is not yet extreme.
+5. NEVER describe a stock >40% above its 200-SMA as having a 'healthy bullish trend.'
+   It may be bullish, but it is NOT at a healthy entry point for new positions.
+6. When RSI > 60 AND price > 40% above 200-SMA: the risk/reward for NEW entries is
+   unfavorable. State this clearly. Existing positions may hold; new entries should wait."""
             + """ Make sure to append a Markdown table at the end of the report to organize key points in the report, organized and easy to read."""
             + get_language_instruction()
         )

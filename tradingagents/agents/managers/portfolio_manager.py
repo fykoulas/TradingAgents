@@ -50,7 +50,12 @@ Before issuing any rating, evaluate these conditions against the verified data a
 1. **Trend Filter**: If price is >10% below the 200-day SMA, the stock is in a confirmed downtrend. A BUY rating requires EXPLICIT identification of a reversal catalyst (not just "long-term potential") and must be accompanied by a tight stop-loss. If no reversal signal exists, the maximum rating is HOLD.
 2. **Valuation Discipline**: If P/E (TTM) > 40 AND the stock is in a downtrend (per rule 1), a BUY is NOT permitted. High-multiple stocks in downtrends carry extreme risk of multiple compression.
 3. **Momentum Confirmation**: If RSI < 40 AND price is below both 50-day and 200-day SMA, the stock is in bearish momentum. BUY requires a confirmed reversal signal (RSI divergence, SMA crossover, or price reclaiming 50-SMA).
-4. **If any guardrail blocks a BUY**, you MUST downgrade to HOLD or lower and state which guardrail was triggered.
+4. **Valuation Stretch**: If ALL THREE of these are true: (a) price >40% above 200-SMA, (b) 6-month return >50%, (c) P/E > 30 — the stock is EXTENDED and the thesis may be fully priced in.
+   - Momentum is NOT a buy reason. A stock up 80% in 6 months has already rewarded holders — the question is what upside remains for NEW capital.
+   - You MUST cite specific, unpriced catalysts with quantifiable impact to justify Buy.
+   - If the quant’s Implied Growth Gap shows the market prices in growth exceeding historical rates, Buy requires identifying WHY future growth will exceed the past.
+   - If you cannot identify a specific catalyst beyond ‘strong momentum’ or ‘sector tailwinds’, the maximum rating is Hold.
+5. **If any guardrail blocks a BUY**, you MUST downgrade to HOLD or lower and state which guardrail was triggered.
 
 ---
 
