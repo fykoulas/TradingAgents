@@ -43,6 +43,8 @@ def create_fundamentals_analyst(llm):
             " High D/E is structural (leveraged real assets with stable cash flows)."
             " Use debt/total-assets, interest coverage ratio, and occupancy rate."
             "\n• UTILITIES: High D/E (1.5x-3x) is normal for regulated, capital-intensive businesses"
+            "\n• RESTAURANTS / FRANCHISORS: Mature franchise models (QSR, MCD, YUM, DPZ) routinely carry D/E of 3x-10x+ or even NEGATIVE equity. This is the standard capital structure for asset-light, cash-generative businesses that return capital aggressively. A D/E of 3x at a franchisor is NOT overleveraged — it reflects the business model. Compare to named peers (MCD, YUM, DPZ) before concluding leverage is excessive."
+            "\n• CONSUMER STAPLES / TOBACCO: Stable, recurring cash flows support high leverage. D/E of 2x-5x is normal (PM, MO, KO). Flag sector context."
             " with predictable cash flows. Focus on interest coverage and regulatory rate-base growth."
             "\nIf you describe a ratio as 'conservative,' 'favorable,' 'low,' or 'concerning,'"
             " you MUST state what the relevant sector benchmark is and cite it."
