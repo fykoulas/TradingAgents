@@ -78,6 +78,13 @@ If the 6-month return is >50% AND the stock is near its 52-week high (within 10%
 Scan the analyst reports for relative valuation against named industry peers.
 If ANY analyst says the stock is 'undervalued,' 'reasonably priced,' or 'attractively valued'
 without comparing to specific peers by name and multiple — flag that as an analytical weakness.
+2. If peer comparisons use 'peer median' without NAMING the specific peers, flag this as
+   incomplete. Every peer median must trace back to named companies listed in the peer data.
+3. **Margin Metric Check (franchisors)**: If the company is a franchisor (QSR, MCD, YUM,
+   DPZ, or classified as Restaurants/Fast Food), and any analyst compares NET profit margin
+   to peers, flag this as WRONG METRIC. Franchise revenue recognition includes system-wide
+   sales that inflate the revenue denominator. The correct comparison is OPERATING MARGIN.
+   A net margin gap flagged as a 'weakness' for a franchisor is an analytical error.
 
 ---
 
