@@ -72,6 +72,16 @@ Before issuing any rating, evaluate these conditions against the verified data a
 
 ---
 
+8. **D/E Decomposition**: If the verified data includes a THIN-EQUITY ALERT (equity <10% of
+   assets), the D/E ratio is mathematically uninformative. Do NOT cite it as evidence of
+   excessive leverage. Check the verified Total Financial Debt vs Total Cash:
+   - If the company is in a NET CASH position, D/E-based risk arguments are INVALID.
+   - The correct risk for thin-equity companies is 'minimal book equity cushion from
+     accumulated losses' — a profitability problem, not a debt problem.
+   - If any analyst confused thin equity with extreme debt, flag and correct the framing.
+
+---
+
 **Your Unique Mandate (what ONLY you evaluate):**
 - **Capital efficiency**: Is this the best use of marginal capital vs. holding cash or other opportunities?
 - **Entry timing**: Is the risk/reward attractive RIGHT NOW, or should we wait for a better price?

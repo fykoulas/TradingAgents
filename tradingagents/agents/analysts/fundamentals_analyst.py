@@ -16,6 +16,7 @@ def create_fundamentals_analyst(llm):
     def fundamentals_analyst_node(state):
         current_date = state["trade_date"]
         instrument_context = build_instrument_context(state["company_of_interest"])
+        verified_data = state.get("verified_data", "")
         prefetched = state.get("prefetched_data") or {}
 
         tools = [
@@ -52,6 +53,44 @@ def create_fundamentals_analyst(llm):
             "\n• RESTAURANTS / FRANCHISORS: Mature franchise models (QSR, MCD, YUM, DPZ) routinely carry D/E of 3x-10x+ or even NEGATIVE equity. This is the standard capital structure for asset-light, cash-generative businesses that return capital aggressively. A D/E of 3x at a franchisor is NOT overleveraged — it reflects the business model. Compare to named peers (MCD, YUM, DPZ) before concluding leverage is excessive."
             "\n• CONSUMER STAPLES / TOBACCO: Stable, recurring cash flows support high leverage. D/E of 2x-5x is normal (PM, MO, KO). Flag sector context."
             " with predictable cash flows. Focus on interest coverage and regulatory rate-base growth."
+            "\n"
+            "\nD/E DECOMPOSITION (MANDATORY — ALL SECTORS):"
+            "\nThe standard D/E ratio (total liabilities / equity OR total debt / equity) is MISLEADING"
+            " whenever stockholders' equity is thin (<10% of total assets). This happens when cumulative"
+            " operating losses (accumulated deficit) have eroded contributed capital — the D/E ratio"
+            " goes to extreme values (100x, 500x, 700x+) even if absolute financial debt is modest."
+            "\nBEFORE citing D/E as a risk factor, you MUST decompose it:"
+            "\n1. Identify TOTAL FINANCIAL DEBT (bonds, loans, credit facilities, capital lease obligations)"
+            "   — this is what the company actually owes to creditors."
+            "\n2. Identify TOTAL CASH and compute NET DEBT = Total Debt − Total Cash."
+            "   If Net Debt is negative, the company has a NET CASH position — it literally has more"
+            "   cash than debt. Citing D/E as 'alarming' for a net-cash company is a CRITICAL ERROR."
+            "\n3. Identify DEFERRED REVENUE in liabilities. Deferred revenue is prepaid customer"
+            "   contracts — it is NOT financial debt. A company with $60M deferred revenue and $46M"
+            "   debt has very different risk than one with $106M debt."
+            "\n4. Compute EQUITY RATIO = Stockholders' Equity / Total Assets."
+            "   If Equity Ratio < 10%, the company has THIN EQUITY — the D/E is extreme BY CONSTRUCTION."
+            "   The correct framing is: 'near-insolvency by book value' or 'equity eroded by accumulated"
+            "   losses,' NOT 'extreme debt' or 'catastrophic leverage.'"
+            "\n5. Check ACCUMULATED DEFICIT on the balance sheet. If accumulated deficit exceeds contributed"
+            "   capital (additional paid-in capital), equity has been compressed by operating losses."
+            "   This is a PROFITABILITY problem, not a LEVERAGE problem — different risks, different"
+            "   implications, different remedies."
+            "\n6. Present the decomposition in a table:"
+            "\n| Component | Value |"
+            "\n|-----------|-------|"
+            "\n| Total Financial Debt | $X |"
+            "\n| Total Cash | $X |"
+            "\n| Net Debt (or Net Cash) | $X |"
+            "\n| Deferred Revenue (not debt) | $X |"
+            "\n| Stockholders' Equity | $X |"
+            "\n| Total Assets | $X |"
+            "\n| Equity Ratio (Equity/Assets) | X% |"
+            "\n| Accumulated Deficit | $X |"
+            "\n| D/E Ratio (raw) | X — (flag as 'uninformative' if equity ratio <10%) |"
+            "\n"
+            "\nIf the VERIFIED GROUND-TRUTH DATA includes a THIN-EQUITY ALERT or debt decomposition,"
+            " you MUST use those figures and frame your analysis accordingly."
             "\nIf you describe a ratio as 'conservative,' 'favorable,' 'low,' or 'concerning,'"
             " you MUST state what the relevant sector benchmark is and cite it."
             " Never call a metric 'low' or 'high' without stating the sector-appropriate range."
@@ -212,6 +251,7 @@ def create_fundamentals_analyst(llm):
                     "\n\nCRITICAL — TODAY'S TRADING DATE IS {current_date}."
                     " All dates in your report MUST reference this exact date (year, month, day)."
                     " {instrument_context}"
+                    "\n\n{verified_data}"
                     "{data_block}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),
@@ -222,6 +262,9 @@ def create_fundamentals_analyst(llm):
         prompt = prompt.partial(system_message=system_message)
         prompt = prompt.partial(current_date=current_date)
         prompt = prompt.partial(instrument_context=instrument_context)
+        prompt = prompt.partial(
+            verified_data=verified_data.replace("{", "{{").replace("}", "}}")
+        )
         prompt = prompt.partial(
             data_block=data_block.replace("{", "{{").replace("}", "}}")
         )

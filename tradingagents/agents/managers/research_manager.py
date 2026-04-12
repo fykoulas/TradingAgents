@@ -49,6 +49,27 @@ If the company is in Insurance, Banking, REITs, Restaurants/Franchisors, Utiliti
 
 ---
 
+**D/E DECOMPOSITION CHECK (MANDATORY — applies to ALL sectors):**
+Scan the verified data for debt decomposition fields (Total Financial Debt, Net Debt/Cash,
+Equity Ratio, Accumulated Deficit). Also check for a THIN-EQUITY ALERT.
+
+If the Equity Ratio (Equity/Assets) is <10%:
+1. The D/E ratio is MATHEMATICALLY UNINFORMATIVE — it is extreme because equity is near zero
+   from accumulated operating losses, NOT necessarily because debt is catastrophic.
+2. If ANY analyst describes the D/E as 'extremely high leverage,' 'alarming debt,' or
+   'overleveraged' without decomposing it into Total Financial Debt vs Total Cash,
+   flag this as an ANALYTICAL ERROR. The correct framing is: 'thin equity cushion' or
+   'near-insolvency by book value' — these are different risks with different implications.
+3. If the company has a NET CASH position (Total Cash > Total Debt) but an extreme D/E,
+   any analyst treating D/E as a leverage alarm is WRONG. Net cash = no financial distress
+   from debt, regardless of what D/E shows.
+4. Check that the fundamentals analyst included the debt decomposition table. If missing,
+   note it as a gap.
+5. The correct risk to flag for thin-equity companies is: 'Company has almost no book equity
+   cushion — a modest adverse event could make equity negative.' NOT: 'Company has extreme debt.'
+
+---
+
 **QUANTITATIVE REALITY CHECK (evaluate BEFORE reading the debate):**
 Review the verified market data above. Before proceeding, answer:
 - Is the stock above or below the 200-day SMA? By how much?
