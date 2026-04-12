@@ -93,7 +93,23 @@ After computing Price vs 200-SMA %, you MUST assess extension risk:
 5. NEVER describe a stock >40% above its 200-SMA as having a 'healthy bullish trend.'
    It may be bullish, but it is NOT at a healthy entry point for new positions.
 6. When RSI > 60 AND price > 40% above 200-SMA: the risk/reward for NEW entries is
-   unfavorable. State this clearly. Existing positions may hold; new entries should wait."""
+   unfavorable. State this clearly. Existing positions may hold; new entries should wait.
+
+TECHNICAL DATA SANITY CHECK (MANDATORY):
+Before reporting ANY price-based indicator (SMA, EMA, Bollinger Middle/Upper/Lower, VWMA),
+verify it is physically possible:
+1. No moving average or Bollinger band value can be OUTSIDE the 52-week price range.
+   If the 52-week low is $X, then no 20-day SMA, 50-day SMA, or VWMA can be below $X.
+   This is mathematically impossible — all averages must fall within the range of recent prices.
+2. If you compute or observe any indicator value that is <50% of the 52-week low or >150%
+   of the 52-week high, the underlying price data is CORRUPT (likely a stale cache with
+   phantom stock-split adjustments). You MUST:
+   a) Discard ALL indicator values computed from the OHLCV data
+   b) Use ONLY the VERIFIED values from the snapshot (RSI, SMA-50, SMA-200, ATR)
+   c) State explicitly: 'OHLCV data appears corrupt — indicators from pre-fetched data
+      are discarded. Analysis uses verified snapshot values only.'
+3. The VERIFIED MARKET DATA table values (from the snapshot) are ALWAYS authoritative.
+   If any computed indicator contradicts the verified values, use the verified values."""
             + """ Make sure to append a Markdown table at the end of the report to organize key points in the report, organized and easy to read."""
             + get_language_instruction()
         )

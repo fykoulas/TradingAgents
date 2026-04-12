@@ -126,6 +126,16 @@ without comparing to specific peers by name and multiple — flag that as an ana
 The VERIFIED GROUND-TRUTH DATA block contains independently computed values for Current Price,
 6-Month Return, RSI, ATR, 52-Week High/Low, and SMA levels.
 
+**TECHNICAL DATA SANITY CHECK:**
+If the Market Analysis contains any price-based indicator value (SMA, EMA, Bollinger, VWMA)
+that is outside the 52-week price range from verified data, the technical analysis is based
+on CORRUPT data. In that case:
+1. Discard ALL technical conclusions from the market report except those based on verified
+   snapshot values (the RSI, SMA-50, SMA-200, ATR values from the verified data table).
+2. If the report contains a TECHNICAL DATA CORRUPTION banner, treat ALL non-verified
+   technical indicators as unreliable.
+3. Do NOT let fabricated indicator values influence the investment recommendation.
+
 **REVENUE GROWTH CONSISTENCY CHECK:**
 If the verified data includes a REVENUE TREND PROVENANCE section:
 1. Compare any revenue CAGR cited by analysts against the verified computed CAGRs.

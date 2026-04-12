@@ -95,6 +95,12 @@ Before issuing any rating, evaluate these conditions against the verified data a
    - Quarterly revenue trend (flat/declining) overrides historical CAGR for forward-looking
      assessment. A company with declining sequential revenue is NOT a growth investment.
 
+8d. **Technical Data Integrity**: If the market analysis contains a TECHNICAL DATA CORRUPTION
+   banner, or if any price-based indicator (SMA, Bollinger, VWMA) falls outside the 52-week
+   range, ALL technical conclusions from that report are UNRELIABLE. Base your technical
+   assessment ONLY on verified snapshot values (RSI, SMA-50, SMA-200, ATR). Do not cite
+   fabricated indicator values to support a BUY/SELL recommendation.
+
 ---
 
 8b. **Current Ratio Decomposition**: If CR < 1.0 and the verified data shows a CURRENT
