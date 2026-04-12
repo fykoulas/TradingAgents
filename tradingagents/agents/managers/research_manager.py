@@ -78,6 +78,20 @@ If the 6-month return is >50% AND the stock is near its 52-week high (within 10%
 Scan the analyst reports for relative valuation against named industry peers.
 If ANY analyst says the stock is 'undervalued,' 'reasonably priced,' or 'attractively valued'
 without comparing to specific peers by name and multiple — flag that as an analytical weakness.
+
+---
+
+**VERIFIED DATA CONSISTENCY CHECK:**
+The VERIFIED GROUND-TRUTH DATA block contains independently computed values for Current Price,
+6-Month Return, RSI, ATR, 52-Week High/Low, and SMA levels.
+1. Scan ALL analyst reports for any reported 6-Month Return figure.
+2. If ANY analyst's 6-Month Return differs from the VERIFIED value by more than 3 percentage
+   points, flag it as a DATA ERROR. The verified value is authoritative — the divergent figure
+   is hallucinated or computed from incomplete data.
+3. If an analyst's conclusion depends on the wrong return figure (e.g., 'rapid appreciation
+   suggests thesis is priced in' based on 55% when actual is 16%), flag the conclusion as
+   INVALID and restate it using the verified figure.
+4. Apply the same check to Current Price, RSI, and ATR — any divergence >5% is a flag.
 A valuation judgment without peer context is incomplete.
 If peer comparison data shows the target trading at a >20% PREMIUM to peer median P/E or EV/EBITDA,
 your recommendation must acknowledge this and explain why the premium is justified.
