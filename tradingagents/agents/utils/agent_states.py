@@ -58,6 +58,7 @@ class AgentState(MessagesState):
     fundamentals_report: Annotated[str, "Report from the Fundamentals Researcher"]
     quant_report: Annotated[str, "Report from the Quantitative Analyst"]
     verified_data: Annotated[str, "Pre-verified market data from yfinance direct API"]
+    prefetched_data: Annotated[dict, "Pre-fetched analyst data to eliminate tool round-trips"]
 
     # researcher team discussion step
     investment_debate_state: Annotated[

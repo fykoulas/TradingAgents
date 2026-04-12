@@ -8,6 +8,7 @@ def create_social_media_analyst(llm):
     def social_media_analyst_node(state):
         current_date = state["trade_date"]
         instrument_context = build_instrument_context(state["company_of_interest"])
+        prefetched = state.get("prefetched_data") or {}
 
         tools = [
             get_news,
@@ -19,30 +20,57 @@ def create_social_media_analyst(llm):
             + get_language_instruction()
         )
 
+        # Pre-fetched data mode: inject data, skip tool round-trips
+        if prefetched.get("company_news"):
+            data_block = (
+                "\n\n=== PRE-FETCHED COMPANY NEWS & SOCIAL MEDIA ===\n"
+                + prefetched["company_news"]
+            )
+            mode_instruction = (
+                "All required news and social media data has been pre-fetched"
+                " and is provided below. Analyze the data directly to write your report."
+            )
+        else:
+            data_block = ""
+            mode_instruction = (
+                "Use the provided tools to progress towards answering the question."
+                " If you are unable to fully answer, that's OK; another assistant with different tools"
+                " will help where you left off. Execute what you can to make progress."
+                f" You have access to the following tools: {', '.join([t.name for t in tools])}."
+            )
+
         prompt = ChatPromptTemplate.from_messages(
             [
                 (
                     "system",
                     "You are a helpful AI assistant, collaborating with other assistants."
-                    " Use the provided tools to progress towards answering the question."
-                    " If you are unable to fully answer, that's OK; another assistant with different tools"
-                    " will help where you left off. Execute what you can to make progress."
+                    " {mode_instruction}"
                     " If you or any other assistant has the FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** or deliverable,"
                     " prefix your response with FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** so the team knows to stop."
-                    " You have access to the following tools: {tool_names}.\n{system_message}"
+                    "\n{system_message}"
                     "\n\nCRITICAL — TODAY'S TRADING DATE IS {current_date}."
                     " All dates in your report MUST reference this exact date (year, month, day)."
-                    " {instrument_context}",
+                    " {instrument_context}"
+                    "{data_block}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),
             ]
         )
 
+        prompt = prompt.partial(mode_instruction=mode_instruction)
         prompt = prompt.partial(system_message=system_message)
-        prompt = prompt.partial(tool_names=", ".join([tool.name for tool in tools]))
         prompt = prompt.partial(current_date=current_date)
         prompt = prompt.partial(instrument_context=instrument_context)
+        prompt = prompt.partial(
+            data_block=data_block.replace("{", "{{").replace("}", "}}")
+        )
 
+        if data_block:
+            # Single-shot: all data in prompt, no tools needed
+            result = (prompt | llm).invoke(state["messages"])
+            return {"sentiment_report": result.content}
+
+        # Fallback: tool-calling loop
         chain = prompt | llm.bind_tools(tools)
 
         # Internal tool loop — runs tool calls locally for parallel execution

@@ -15,6 +15,7 @@ def create_market_analyst(llm):
         current_date = state["trade_date"]
         instrument_context = build_instrument_context(state["company_of_interest"])
         verified_data = state.get("verified_data", "")
+        prefetched = state.get("prefetched_data") or {}
 
         tools = [
             get_stock_data,
@@ -51,17 +52,36 @@ Volume-Based Indicators:
             + get_language_instruction()
         )
 
+        # Pre-fetched data mode: inject data, skip tool round-trips
+        if prefetched.get("stock_data"):
+            data_block = (
+                "\n\n=== PRE-FETCHED STOCK PRICE DATA (OHLCV) ===\n"
+                + prefetched["stock_data"]
+                + "\n\n=== PRE-FETCHED TECHNICAL INDICATORS ===\n"
+                + prefetched.get("indicators", "N/A")
+            )
+            mode_instruction = (
+                "All required market data and technical indicators have been pre-fetched"
+                " and are provided below. Analyze the data directly to write your report."
+            )
+        else:
+            data_block = ""
+            mode_instruction = (
+                "Use the provided tools to progress towards answering the question."
+                " If you are unable to fully answer, that's OK; another assistant with different tools"
+                " will help where you left off. Execute what you can to make progress."
+                f" You have access to the following tools: {', '.join([t.name for t in tools])}."
+            )
+
         prompt = ChatPromptTemplate.from_messages(
             [
                 (
                     "system",
                     "You are a helpful AI assistant, collaborating with other assistants."
-                    " Use the provided tools to progress towards answering the question."
-                    " If you are unable to fully answer, that's OK; another assistant with different tools"
-                    " will help where you left off. Execute what you can to make progress."
+                    " {mode_instruction}"
                     " If you or any other assistant has the FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** or deliverable,"
                     " prefix your response with FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** so the team knows to stop."
-                    " You have access to the following tools: {tool_names}.\n{system_message}"
+                    "\n{system_message}"
                     "\n\nCRITICAL — TODAY'S TRADING DATE IS {current_date}."
                     " All dates in your report MUST reference this exact date (year, month, day)."
                     " The last row in any OHLCV dataset is the most recent trading day"
@@ -69,18 +89,28 @@ Volume-Based Indicators:
                     "\n\nIMPORTANT: If VERIFIED GROUND-TRUTH DATA is provided below, use those exact"
                     " values for RSI, 50-day SMA, 200-day SMA, ATR, and 6-month return in your report."
                     " Do NOT substitute tool-computed values that differ from the verified data."
-                    " {instrument_context}\n\n{verified_data}",
+                    " {instrument_context}\n\n{verified_data}"
+                    "{data_block}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),
             ]
         )
 
+        prompt = prompt.partial(mode_instruction=mode_instruction)
         prompt = prompt.partial(system_message=system_message)
-        prompt = prompt.partial(tool_names=", ".join([tool.name for tool in tools]))
         prompt = prompt.partial(current_date=current_date)
         prompt = prompt.partial(instrument_context=instrument_context)
         prompt = prompt.partial(verified_data=verified_data)
+        prompt = prompt.partial(
+            data_block=data_block.replace("{", "{{").replace("}", "}}")
+        )
 
+        if data_block:
+            # Single-shot: all data in prompt, no tools needed
+            result = (prompt | llm).invoke(state["messages"])
+            return {"market_report": result.content}
+
+        # Fallback: tool-calling loop
         chain = prompt | llm.bind_tools(tools)
 
         # Internal tool loop — runs tool calls locally for parallel execution
