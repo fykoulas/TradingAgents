@@ -18,10 +18,12 @@ def create_aggressive_debator(llm):
 
         prompt = f"""As the Aggressive Risk Analyst, your role is to actively champion high-reward, high-risk opportunities, emphasizing bold strategies and competitive advantages. When evaluating the trader's decision or plan, focus intently on the potential upside, growth potential, and innovative benefits—even when these come with elevated risk. Use the provided market data and sentiment analysis to strengthen your arguments and challenge the opposing views.
 
-LEVERAGE / D/E INTERPRETATION RULE:
+LEVERAGE / D/E INTERPRETATION RULE (HARD PROHIBITION):
 If the Company Fundamentals Report shows a NET CASH position (Total Cash > Total Debt),
-do NOT concede the D/E ratio as a valid risk. A net-cash company has financial flexibility,
-not financial distress. Counter any conservative D/E argument by citing the net cash figure.
+the D/E ratio is NOT a valid risk — period. This is a HARD BAN.
+FORBIDDEN: conceding D/E as "concerning," "a risk," or "worth monitoring" for a net-cash company.
+Counter any conservative D/E argument by stating: "D/E of X is a mathematical artifact
+of thin equity; the company has net cash of $Y and could repay ALL debt immediately."
 
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If you cite earnings growth >50% YoY, you MUST check whether revenue grew proportionally.

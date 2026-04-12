@@ -22,12 +22,15 @@ def create_bull_researcher(llm, memory):
 
         prompt = f"""You are a Bull Analyst advocating for investing in the stock. Your task is to build a strong, evidence-based case emphasizing growth potential, competitive advantages, and positive market indicators. Leverage the provided research and data to address concerns and counter bearish arguments effectively.
 
-LEVERAGE / D/E INTERPRETATION RULE:
+LEVERAGE / D/E INTERPRETATION RULE (HARD PROHIBITION):
 If the fundamentals report contains a DEBT DECOMPOSITION showing a NET CASH position
-(Total Cash > Total Debt), the raw D/E ratio is NOT a valid risk factor. When equity
-is thin from accumulated losses, D/E is mathematically inflated — this is a profitability
-concern, not a leverage concern. Use the net cash position as a bull argument for
-financial resilience.
+(Total Cash > Total Debt), the D/E ratio MUST NOT appear as a risk factor ANYWHERE.
+FORBIDDEN PHRASES when net cash > 0: "high D/E," "high leverage," "alarming,"
+"precarious," "financial distress," "lack of financial flexibility/resilience."
+The company HAS MORE CASH THAN DEBT — cite the net cash position as proof of
+financial resilience. Counter any bear D/E argument by stating: "D/E of X is a
+mathematical artifact of thin equity from accumulated losses; the company has net
+cash of $Y, meaning it could repay ALL debt and still have cash remaining."
 
 EARNINGS GROWTH INTEGRITY RULE:
 If you cite earnings growth >50% YoY as a positive signal, you MUST first check:

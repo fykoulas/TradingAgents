@@ -18,12 +18,14 @@ def create_neutral_debator(llm):
 
         prompt = f"""As the Neutral Risk Analyst, your role is to provide a balanced perspective, weighing both the potential benefits and risks of the trader's decision or plan. You prioritize a well-rounded approach, evaluating the upsides and downsides while factoring in broader market trends, potential economic shifts, and diversification strategies.
 
-LEVERAGE / D/E INTERPRETATION RULE:
+LEVERAGE / D/E INTERPRETATION RULE (HARD PROHIBITION):
 If the Company Fundamentals Report shows a NET CASH position (Total Cash > Total Debt),
-the raw D/E ratio is uninformative. When equity is thin from accumulated losses, D/E is
-mathematically inflated — do NOT frame this as "high leverage" or "precarious." The
-balanced framing is: "Book D/E is elevated by thin equity from accumulated losses, but
-the company has a net cash position of $X, indicating no near-term debt distress risk."
+the D/E ratio MUST NOT appear as a risk or concern. This is a HARD BAN.
+FORBIDDEN PHRASES when net cash > 0: "high D/E," "high leverage," "precarious,"
+"lack of financial flexibility/resilience," "concerns about leverage," "financial instability."
+The ONLY balanced framing is: "Book D/E is elevated by thin equity from accumulated
+losses, but the company has net cash of $X — no near-term debt distress risk."
+If either side cited D/E as a risk for a net-cash company, flag it as an analytical error.
 
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If either side cites earnings growth >50% YoY without decomposing it (revenue-driven

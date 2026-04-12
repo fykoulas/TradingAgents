@@ -45,14 +45,14 @@ as missing or unavailable:
 
 **NEWS/SENTIMENT PIPELINE FAILURE CHECK:**
 If the News Analysis says "No company-specific news flow detected" AND the Sentiment
-section says "INSUFFICIENT DATA" for a company with market cap >$500M:
-1. This is a DATA PIPELINE FAILURE, not evidence of market silence. A company of this
-   size has media coverage — zero results means the data source failed.
-2. Flag explicitly: "News and sentiment data unavailable due to pipeline failure. This is
+section says "INSUFFICIENT DATA" — regardless of market cap — this is a DATA PIPELINE
+FAILURE if the company has analyst coverage (the verified data shows analyst estimate count).
+A company with analyst coverage generates news. Zero results means the data source failed.
+1. Flag explicitly: "News and sentiment data unavailable due to pipeline failure. This is
    NOT evidence of neutral sentiment or market silence."
-3. Any analyst (bull or bear) who references "stable sentiment" or "no negative news" when
+2. Any analyst (bull or bear) who references "stable sentiment" or "no negative news" when
    the data pipeline returned zero results has committed an ANALYTICAL ERROR. Flag it.
-4. Do NOT weight news/sentiment as neutral in your recommendation — weight them as UNKNOWN.
+3. Do NOT weight news/sentiment as neutral in your recommendation — weight them as UNKNOWN.
    An unknown is a risk factor, not a neutral factor.
 
 ---
