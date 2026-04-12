@@ -23,9 +23,11 @@ Step 1: Find Total Debt and Total Cash in the Company Fundamentals Report.
 Step 2: Pick the CORRECT path below. There is NO third option.
 
 PATH A — NET DEBT (Total Debt > Total Cash):
-  The company carries net debt. You MAY cite high D/E, leverage risk, debt burden,
+  The company carries net debt. You MAY cite leverage risk, debt burden,
   interest coverage concerns. These are legitimate conservative arguments.
-  Use the verified figures — do NOT invent different numbers.
+  Use Net Debt/FCF as the primary leverage metric (not D/E when equity is
+  compressed by buybacks). Net Debt/FCF ≥ 5x is genuinely elevated.
+  Do NOT call D/E "uninformative" when the company has real net debt.
 
 PATH B — NET CASH (Total Cash > Total Debt):
   The company has more cash than debt. D/E MUST NOT appear as a risk or concern.

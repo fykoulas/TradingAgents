@@ -67,19 +67,26 @@ Scan the verified data for debt decomposition fields (Total Financial Debt, Net 
 Equity Ratio, Accumulated Deficit). Also check for a THIN-EQUITY ALERT.
 
 If the Equity Ratio (Equity/Assets) is <10%:
-1. The D/E ratio is MATHEMATICALLY UNINFORMATIVE — it is extreme because equity is near zero
-   from accumulated operating losses, NOT necessarily because debt is catastrophic.
+1. The D/E RATIO is unreliable when equity is compressed — but the DEBT may be real.
+   Check the verified data for the specific thin-equity classification:
+   • THIN-EQUITY (ARTIFACT): Net cash company — D/E truly uninformative, no debt risk.
+   • REAL LEVERAGE + THIN EQUITY: Net Debt/FCF ≥ 3x — GENUINE leverage. The debt IS real,
+     only the D/E RATIO is uninformative. Calling D/E 'uninformative' in this case
+     is an ANALYTICAL ERROR because it implies modest debt. Use Net Debt/FCF instead.
+   • THIN-EQUITY (modest leverage): D/E inflated, absolute debt modest relative to FCF.
 2. If ANY analyst describes the D/E as 'extremely high leverage,' 'alarming debt,' or
-   'overleveraged' without decomposing it into Total Financial Debt vs Total Cash,
-   flag this as an ANALYTICAL ERROR. The correct framing is: 'thin equity cushion' or
-   'near-insolvency by book value' — these are different risks with different implications.
-3. If the company has a NET CASH position (Total Cash > Total Debt) but an extreme D/E,
+   'overleveraged' without citing Net Debt/FCF or Total Financial Debt vs Total Cash,
+   flag this as an ANALYTICAL ERROR.
+3. If ANY analyst calls D/E 'uninformative due to thin equity' for a company with
+   Net Debt/FCF ≥ 3x, flag this as WRONG — the debt is real, the ratio is misleading
+   but the leverage conclusion is valid. Correct framing: 'D/E of X conflates buyback-
+   driven equity compression with real financial leverage. Net Debt/FCF of Y.Yx is the
+   informative metric.'
+4. If the company has a NET CASH position (Total Cash > Total Debt) but an extreme D/E,
    any analyst treating D/E as a leverage alarm is WRONG. Net cash = no financial distress
    from debt, regardless of what D/E shows.
-4. Check that the fundamentals analyst included the debt decomposition table. If missing,
+5. Check that the fundamentals analyst included the debt decomposition table. If missing,
    note it as a gap.
-5. The correct risk to flag for thin-equity companies is: 'Company has almost no book equity
-   cushion — a modest adverse event could make equity negative.' NOT: 'Company has extreme debt.'
 
 ---
 

@@ -24,8 +24,10 @@ Step 2: Pick the CORRECT path below. There is NO third option.
 
 PATH A — NET DEBT (Total Debt > Total Cash):
   The company carries net debt. Leverage is a legitimate risk factor.
-  Weigh it fairly — neither minimizing nor catastrophizing.
+  Weigh it fairly using Net Debt/FCF (not D/E when equity is compressed).
   If either side misstates the debt position, flag it as a factual error.
+  If either side calls D/E "uninformative" when Net Debt/FCF ≥ 3x, flag it —
+  the debt IS real, only the D/E RATIO is uninformative.
 
 PATH B — NET CASH (Total Cash > Total Debt):
   D/E MUST NOT appear as a risk or concern. The ONLY balanced framing:

@@ -30,11 +30,16 @@ Step 2: Pick the CORRECT path below. There is NO third option.
 PATH A — NET DEBT (Total Debt > Total Cash):
   The company carries net debt. You MUST NOT claim it has a "net cash position,"
   "more cash than debt," or that it "could repay all debt." These are FABRICATIONS.
-  If D/E is high, acknowledge leverage risk honestly. Do not minimize it.
-  You may argue the debt is manageable (coverage ratios, asset backing) but you
-  CANNOT invert reality. FORBIDDEN phrases under Path A:
+  If D/E is high, acknowledge leverage honestly. Do not minimize it.
+  USE Net Debt/FCF from golden variables as the PRIMARY leverage metric — D/E is
+  unreliable when equity is compressed by buybacks. You may argue the debt is
+  manageable IF Net Debt/FCF < 4x (comfortable) or 4-6x (elevated but serviceable).
+  If Net Debt/FCF ≥ 6x, do NOT call leverage "manageable" without citing specific
+  interest coverage or debt maturity data.
+  FORBIDDEN phrases under Path A:
   "net cash," "cash exceeds debt," "repay all debt," "debt-free,"
-  "more cash than debt," "cash remaining after repaying debt."
+  "more cash than debt," "cash remaining after repaying debt,"
+  "D/E is uninformative" (when net debt is real, D/E is misleading but leverage is NOT).
 
 PATH B — NET CASH (Total Cash > Total Debt):
   The company has more cash than debt. D/E may be mathematically inflated by thin

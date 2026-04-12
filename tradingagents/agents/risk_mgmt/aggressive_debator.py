@@ -23,12 +23,13 @@ Step 1: Find Total Debt and Total Cash in the Company Fundamentals Report.
 Step 2: Pick the CORRECT path below. There is NO third option.
 
 PATH A — NET DEBT (Total Debt > Total Cash):
-  The company carries net debt. You MUST NOT claim it has a "net cash position,"
-  "more cash than debt," or that it "could repay all debt." These are FABRICATIONS.
+  The company carries net debt. You MUST NOT claim it has a "net cash position."
   If D/E is high, acknowledge leverage honestly — then argue the debt is manageable
-  (coverage ratios, asset backing), but CANNOT invert reality.
+  using Net Debt/FCF (the correct metric when equity is compressed by buybacks).
+  If Net Debt/FCF < 4x, argue comfortably serviceable. If 4-6x, acknowledge elevated.
   FORBIDDEN phrases under Path A:
-  "net cash," "cash exceeds debt," "repay all debt," "debt-free."
+  "net cash," "cash exceeds debt," "repay all debt," "debt-free,"
+  "D/E is uninformative" (when net debt is real, leverage IS real).
 
 PATH B — NET CASH (Total Cash > Total Debt):
   The company has more cash than debt. D/E is a mathematical artifact of thin equity.

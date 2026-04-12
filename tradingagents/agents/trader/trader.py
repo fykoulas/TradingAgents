@@ -39,8 +39,10 @@ Step 1: Find Total Debt and Total Cash in the fundamentals report.
 Step 2: Pick the CORRECT path. There is NO third option.
 
 PATH A — NET DEBT (Total Debt > Total Cash):
-  Leverage is real. Factor it into your risk assessment honestly.
-  FORBIDDEN: claiming "net cash," "could repay all debt," or "more cash than debt."
+  Leverage is real. Use Net Debt/FCF as the primary leverage metric.
+  If Net Debt/FCF ≥ 5x, factor elevated leverage into risk assessment.
+  FORBIDDEN: claiming "net cash," "could repay all debt," "more cash than debt,"
+  or calling D/E "uninformative" when net debt is substantial.
 
 PATH B — NET CASH (Total Cash > Total Debt):
   D/E is a mathematical artifact. NOT a risk factor.

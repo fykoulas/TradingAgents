@@ -28,11 +28,14 @@ Step 1: Read the golden variables block at the bottom. Find "Net Debt" or "Net C
 Step 2: Pick the CORRECT path below. There is NO third option.
 
 PATH A — NET DEBT (Total Debt > Total Cash):
-  The company carries net debt. You MAY cite high D/E, leverage risk, debt burden,
+  The company carries net debt. You MAY cite high leverage, debt burden,
   interest coverage concerns. These are legitimate bear arguments. Use the verified
-  Total Debt and Net Debt figures — do NOT invent different numbers.
-  FORBIDDEN: understating the debt or claiming "manageable" without citing specific
-  coverage ratios from the verified data.
+  Total Debt, Net Debt, and Net Debt/FCF figures — do NOT invent different numbers.
+  USE Net Debt/FCF as the PRIMARY leverage metric, not D/E (which is unreliable when
+  equity is compressed by buybacks). Net Debt/FCF ≥ 5x is genuinely elevated;
+  ≥ 7x is aggressive even for investment-grade companies.
+  FORBIDDEN: calling D/E "uninformative" or "just an artifact" when Net Debt/FCF
+  shows real leverage. The debt IS real — D/E is a bad MEASURE, not a bad conclusion.
 
 PATH B — NET CASH (Total Cash > Total Debt):
   The company has more cash than debt. D/E may be mathematically inflated by thin
