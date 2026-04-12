@@ -88,6 +88,17 @@ Before issuing any rating, evaluate these conditions against the verified data a
 
 ---
 
+8b. **Current Ratio Decomposition**: If CR < 1.0 and the verified data shows a CURRENT
+   LIABILITY DECOMPOSITION, check whether the analysts decomposed the ratio:
+   - If Adjusted CR (excl. deferred revenue) >= 1.0: CR < 1.0 is an accounting artifact,
+     not a solvency risk. Do NOT cite it as a reason to downgrade.
+   - If BOTH raw and adjusted CR < 1.0: this IS a genuine liquidity concern. Check the
+     cash position vs current debt before deciding if it's actionable.
+   - Any analyst or risk debater who used CR < 1.0 as a major risk without decomposing it
+     committed an analytical error — discount that argument.
+
+---
+
 9. **Forward P/E Provenance**: If the verified data shows NEGATIVE trailing EPS and
    a Forward P/E based on forward EPS estimates:
    - Check: did the analysts state the SOURCE of the forward EPS estimate (consensus

@@ -125,6 +125,20 @@ without comparing to specific peers by name and multiple — flag that as an ana
 **VERIFIED DATA CONSISTENCY CHECK:**
 The VERIFIED GROUND-TRUTH DATA block contains independently computed values for Current Price,
 6-Month Return, RSI, ATR, 52-Week High/Low, and SMA levels.
+
+**CURRENT RATIO DECOMPOSITION CHECK:**
+If the verified data includes a CURRENT LIABILITY DECOMPOSITION section (triggered when CR < 1.0):
+1. Check whether the fundamentals analyst decomposed the current ratio or just flagged it
+   as 'below optimal.' If any analyst says CR is 'concerning,' 'below the benchmark,' or
+   'indicates liquidity risk' WITHOUT checking the deferred revenue composition, flag as
+   ANALYTICAL ERROR. For SaaS/subscription businesses, deferred revenue is often 30-60%
+   of current liabilities and is NOT a cash obligation.
+2. If the verified data shows an Adjusted CR (excl. deferred revenue) >= 1.0, any report
+   treating CR < 1.0 as a solvency risk is WRONG. The correct framing is: 'CR is depressed
+   by deferred revenue; adjusted CR of X.XX shows adequate liquidity.'
+3. If BOTH raw and adjusted CR are < 1.0, validate that the analyst checked: cash position,
+   current debt amount, and whether credit facilities exist.
+
 1. Scan ALL analyst reports for any reported 6-Month Return figure.
 2. If ANY analyst's 6-Month Return differs from the VERIFIED value by more than 3 percentage
    points, flag it as a DATA ERROR. The verified value is authoritative — the divergent figure
