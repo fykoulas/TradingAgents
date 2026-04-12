@@ -12,6 +12,7 @@ def create_bear_researcher(llm, memory):
         news_report = state["news_report"]
         fundamentals_report = state["fundamentals_report"]
         quant_report = state.get("quant_report", "")
+        verified_data = state.get("verified_data", "")
 
         curr_situation = f"{market_research_report}\n\n{sentiment_report}\n\n{news_report}\n\n{fundamentals_report}\n\n{quant_report}"
         past_memories = memory.get_memories(curr_situation, n_matches=2)
@@ -61,6 +62,14 @@ Key points to focus on:
 - Bull Counterpoints: Critically analyze the bull argument with specific data and sound reasoning, exposing weaknesses or over-optimistic assumptions.
 - Engagement: Present your argument in a conversational style, directly engaging with the bull analyst's points and debating effectively rather than simply listing facts.
 
+BALANCE SHEET GROUND TRUTH (HARD — NO EXCEPTIONS):
+The verified data below contains independently verified balance sheet figures
+(Total Debt, Total Cash, Net Debt/Cash, D/E Ratio, Equity Ratio).
+You MUST use ONLY these verified figures for any claim about the company's
+financial position. Do NOT invent, reinterpret, or contradict the verified data.
+If verified data shows Net Debt of $X, you CANNOT claim the company has a
+'net cash position.' Doing so is a FACTUAL FABRICATION.
+
 Resources available:
 
 Market research report: {market_research_report}
@@ -70,6 +79,9 @@ Company fundamentals report: {fundamentals_report}
 Conversation history of the debate: {history}
 Last bull argument: {current_response}
 Reflections from similar situations and lessons learned: {past_memory_str}
+
+=== VERIFIED GROUND-TRUTH DATA ===
+{verified_data}
 Use this information to deliver a compelling bear argument, refute the bull's claims, and engage in a dynamic debate that demonstrates the risks and weaknesses of investing in the stock. You must also address reflections and learn from lessons and mistakes you made in the past.
 """
 

@@ -273,11 +273,13 @@ Before stating your recommendation, you MUST complete this structured dissent an
    | Source | Final Transaction Proposal |
    |--------|--------------------------|
    | Market Analysis | (extract from Market report) |
+   | News Analyst | (extract from News report) |
+   | Sentiment Analyst | (extract from Sentiment report) |
    | Fundamentals Analyst | (extract from Fundamentals report) |
    | Quant Scorecard | (extract from Quant Scorecard — provided separately below) |
-   State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY (out of 3 analyst votes).'
+   State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY (out of 5 analyst votes).'
    COUNTING RULES (HARD — NO EXCEPTIONS):
-   • ONLY the three rows above are VOTES. The tally must sum to exactly 3.
+   • ALL FIVE rows above are VOTES. The tally must sum to exactly 5.
    • Each vote is the analyst's OWN stated verdict — the line containing
      'FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL**' in their report.
    • The Bull Thesis and Bear Thesis are DEBATE ARGUMENTS, not votes.
@@ -322,6 +324,13 @@ Here are your past reflections on mistakes:
 
 Here is the Quantitative Scorecard (produced independently by the Quant Analyst):
 {quant_report}
+
+Here are the News and Sentiment analyst reports (for Signal Tally extraction):
+=== NEWS ANALYST REPORT ===
+{news_report}
+
+=== SENTIMENT ANALYST REPORT ===
+{sentiment_report}
 
 Here is the debate:
 Debate History:
