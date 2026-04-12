@@ -61,6 +61,14 @@ Before issuing any rating, evaluate these conditions against the verified data a
    'Strong growth' or 'market leader' is insufficient — you must cite specific metrics
    (faster revenue growth, higher margins, better ROE) that quantitatively justify the premium.
    If no quantitative justification exists, maximum rating is Hold.
+7. **Valuation Anchor**: Use the fundamentals analyst's BASE CASE fair value (from the
+   sensitivity table) as YOUR anchor valuation. If any other section (quant scorecard,
+   debate, trader plan) cites a different fair value, you MUST reconcile the difference.
+   - State which estimate you adopt and why.
+   - If estimates diverge by >15%, explain which growth assumption is more credible
+     given the company's historical growth rates.
+   - NEVER cite a fair value in your Executive Summary without confirming it matches
+     the fundamentals analyst's base case (or explicitly stating why you override it).
 
 ---
 

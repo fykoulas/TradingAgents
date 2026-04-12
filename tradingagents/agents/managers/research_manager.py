@@ -85,6 +85,21 @@ If it cannot be justified, downgrade to HOLD.
 
 ---
 
+**VALUATION CONSISTENCY CHECK:**
+Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic valuations.
+1. List every fair value figure mentioned across all reports (fundamentals, quant, debate).
+2. If ANY two fair value estimates differ by more than 15%, flag the conflict explicitly.
+   State: 'Fundamentals estimates $X, Quant estimates $Y — these differ by Z%.'
+3. Identify which growth rate assumption drives each estimate. If the growth rates differ,
+   the estimates are not sensitivity scenarios — they are contradictory analyses.
+4. Your recommendation must use the fundamentals analyst's BASE CASE fair value as the
+   primary anchor. If any other section uses a different fair value, note the discrepancy.
+5. If the fundamentals analyst's growth rate assumption deviates >50% from the company's
+   historical revenue/FCF CAGR (e.g., using 4% growth when historicals show 10%), flag this
+   as a potential underestimate or overestimate and state which direction.
+
+---
+
 **STOP-LOSS CONSISTENCY CHECK:**
 Scan the analyst reports for any stop-loss recommendations. Flag:
 1. If ANY analyst suggests using a moving average (50-SMA, 200-SMA) as a stop-loss level,
