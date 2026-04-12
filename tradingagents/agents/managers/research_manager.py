@@ -206,9 +206,32 @@ Scan the analyst reports for any stop-loss recommendations. Flag:
 **MANDATORY — Dissent Section (do this FIRST, before your recommendation):**
 Before stating your recommendation, you MUST complete this structured dissent analysis:
 
-1. **Strongest 3 arguments AGAINST your recommendation**: List the most compelling reasons from the opposing side of the debate. Do not dismiss them — steel-man them.
-2. **What would change your mind**: State 1-2 specific, measurable conditions that would flip your recommendation (e.g., "If revenue growth drops below 10% next quarter" or "If the stock breaks below $X support").
-3. **Confidence qualifier**: Rate your confidence as HIGH (>80% the debate evidence clearly favours one side), MEDIUM (60-80% evidence is mixed but leans), or LOW (<60% evidence is genuinely ambiguous). If LOW, your recommendation MUST be Hold.
+1. **Upstream Signal Tally (count FIRST)**:
+   Scan ALL analyst reports and the debate for directional signals. Tally them explicitly:
+   | Source | Signal |
+   |--------|--------|
+   | Quant Scorecard | BUY / HOLD / SELL |
+   | Market Analysis | BUY / HOLD / SELL |
+   | Fundamentals Analyst | BUY / HOLD / SELL |
+   | Bull Thesis conclusion | strong / moderate / weak |
+   | Bear Thesis conclusion | strong / moderate / weak |
+   State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY.'
+   This tally constrains your recommendation — see Override Rules below.
+
+2. **Strongest 3 arguments AGAINST your recommendation**: List the most compelling reasons from the opposing side of the debate. Do not dismiss them — steel-man them.
+3. **What would change your mind**: State 1-2 specific, measurable conditions that would flip your recommendation (e.g., "If revenue growth drops below 10% next quarter" or "If the stock breaks below $X support").
+4. **Confidence qualifier**: Rate your confidence as HIGH (>80% the debate evidence clearly favours one side), MEDIUM (60-80% evidence is mixed but leans), or LOW (<60% evidence is genuinely ambiguous). If LOW, your recommendation MUST be Hold.
+
+**CONSENSUS OVERRIDE RULES:**
+If ≥3 upstream signals agree on a direction (e.g., 3+ SELL), you MUST NOT override that
+consensus with a contrary recommendation unless ALL of the following are met:
+a) You cite a specific, quantified fair value and compute the risk/reward from current price.
+b) You identify a concrete catalyst with a timeline (not speculative language like 'could
+   improve,' 'might stabilize,' 'potential partnerships').
+c) RSI between 30-40 is NOT 'oversold' — only RSI <30 qualifies. Do NOT use 'approaching
+   oversold' as a reason to override a SELL consensus.
+d) You perform a probability-weighted expected value calculation showing positive EV.
+If you cannot satisfy (a)-(d), you MUST align with the upstream consensus.
 
 ---
 
