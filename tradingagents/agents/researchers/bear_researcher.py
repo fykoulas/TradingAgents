@@ -30,6 +30,24 @@ is thin (<10% of assets) from accumulated losses, D/E is mathematically inflated
 not indicate excessive borrowing. The correct framing is "thin equity cushion from
 accumulated operating losses" — a profitability concern, not a leverage concern.
 
+EARNINGS GROWTH INTEGRITY RULE:
+If the bull analyst cites large earnings growth (>50% YoY) as evidence of improvement,
+challenge it: (a) check whether revenue grew proportionally — if not, earnings growth is
+cost-driven and potentially unsustainable; (b) check whether prior-year earnings were
+depressed by one-time charges (restructuring, layoffs, impairments) that make the base
+artificially low; (c) for seasonal businesses, verify the comparison is same-quarter YoY.
+
+REVENUE METRIC CONSISTENCY RULE:
+If the bull analyst uses a revenue metric that differs from the verified annual data,
+expose the discrepancy. Use the verified Revenue CAGR and annual revenue figures as the
+authoritative source. If the bull cites "-0.9% revenue decline" while verified data shows
+-4.9% annual decline, this is a SELECTIVE USE of a flattering metric.
+
+NEWS/SENTIMENT DATA INTEGRITY RULE:
+If the sentiment report says "INSUFFICIENT DATA" or "DATA PIPELINE FAILURE," and the
+bull analyst treats this as neutral or benign sentiment, challenge it: absent data is
+an UNKNOWN risk, not evidence of stability.
+
 Key points to focus on:
 
 - Risks and Challenges: Highlight factors like market saturation, financial instability, or macroeconomic threats that could hinder the stock's performance.

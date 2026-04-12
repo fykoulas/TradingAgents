@@ -43,6 +43,18 @@ as missing or unavailable:
 3. If an analyst recommended BUY while ignoring a data gap, flag that as an analytical error.
 4. State what data would need to become available before upgrading to BUY.
 
+**NEWS/SENTIMENT PIPELINE FAILURE CHECK:**
+If the News Analysis says "No company-specific news flow detected" AND the Sentiment
+section says "INSUFFICIENT DATA" for a company with market cap >$500M:
+1. This is a DATA PIPELINE FAILURE, not evidence of market silence. A company of this
+   size has media coverage — zero results means the data source failed.
+2. Flag explicitly: "News and sentiment data unavailable due to pipeline failure. This is
+   NOT evidence of neutral sentiment or market silence."
+3. Any analyst (bull or bear) who references "stable sentiment" or "no negative news" when
+   the data pipeline returned zero results has committed an ANALYTICAL ERROR. Flag it.
+4. Do NOT weight news/sentiment as neutral in your recommendation — weight them as UNKNOWN.
+   An unknown is a risk factor, not a neutral factor.
+
 ---
 
 **SECTOR-AWARE RATIO INTERPRETATION:**
@@ -209,7 +221,7 @@ Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic val
    historical revenue/FCF CAGR (e.g., using 4% growth when historicals show 10%), flag this
    as a potential underestimate or overestimate and state which direction.
 6. **Growth Gap Direction Check**: Compare the quant's Implied EPS Growth vs Actual
-   Historical EPS Growth against the fundamentals' Market-Implied Growth vs Actual
+   Historical EPS Growth against the fundamentals' Implied FCF Growth (reverse DCF) vs Actual
    Historical Revenue Growth. If one analyst concludes 'overpriced' (implied > actual)
    while the other concludes 'underpriced' or 'conservative' (implied < actual),
    flag the CONTRADICTION explicitly. State both figures, explain the discrepancy

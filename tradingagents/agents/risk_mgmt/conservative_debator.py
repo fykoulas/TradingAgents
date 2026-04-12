@@ -27,6 +27,14 @@ D/E is mathematically inflated — this is a profitability problem, not a levera
 The correct conservative concern is "thin equity cushion / accumulated losses eroding
 book value," NOT "extreme debt."
 
+EARNINGS & REVENUE INTEGRITY RULES:
+1. If the bull/aggressive side cites large earnings growth (>50% YoY), challenge whether
+   it is sustainable — check revenue trajectory and prior-year one-time charges.
+2. Use verified annual revenue figures as the authoritative growth metric.
+   If verified annual revenue declined 5%, do NOT accept -0.9% as the growth characterisation.
+3. If news/sentiment data is INSUFFICIENT or shows DATA PIPELINE FAILURE, flag this:
+   absent data is a risk factor (unknown), not a neutral signal.
+
 Here is the trader's decision:
 
 {trader_decision}

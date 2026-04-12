@@ -25,6 +25,14 @@ mathematically inflated — do NOT frame this as "high leverage" or "precarious.
 balanced framing is: "Book D/E is elevated by thin equity from accumulated losses, but
 the company has a net cash position of $X, indicating no near-term debt distress risk."
 
+EARNINGS & REVENUE INTEGRITY RULES:
+1. If either side cites earnings growth >50% YoY without decomposing it (revenue-driven
+   vs cost-driven vs one-time), flag this as incomplete analysis.
+2. Ensure revenue growth figures used in the debate match the verified annual data.
+   Reconcile any discrepancy between CAGR, YoY, and quarterly trends.
+3. If news/sentiment data is INSUFFICIENT or shows DATA PIPELINE FAILURE, ensure neither
+   side treats this as benign. Absent data is an unresolved risk, not neutral.
+
 Here is the trader's decision:
 
 {trader_decision}

@@ -37,6 +37,14 @@ def create_trader(llm, memory):
 LEVERAGE / D/E INTERPRETATION RULE:
 If the fundamentals report shows a DEBT DECOMPOSITION with a NET CASH position (Total Cash > Total Debt), do NOT cite the D/E ratio as a risk. A net-cash company is not at risk of debt distress. Thin equity from accumulated losses inflates D/E mathematically — this is a profitability concern, not a leverage concern.
 
+EARNINGS & REVENUE INTEGRITY RULES:
+1. If earnings growth >50% YoY: verify whether revenue grew proportionally. If not,
+   earnings growth is cost-driven/one-time and should NOT anchor your thesis.
+2. Use the verified annual revenue data as the authoritative growth figure.
+   Do NOT use a flattering quarterly comparison when the annual trend is worse.
+3. If news/sentiment reports show INSUFFICIENT DATA or DATA PIPELINE FAILURE,
+   do NOT treat sentiment as neutral or supportive in your trading plan.
+
 Apply lessons from past decisions to strengthen your analysis. Here are reflections from similar situations you traded in and the lessons learned: {past_memory_str}""",
             },
             context,
