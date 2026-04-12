@@ -319,6 +319,25 @@ If you cannot satisfy (a)-(d), you MUST align with the upstream consensus.
 
 ---
 
+**GROWTH GAP EXECUTIVE HIGHLIGHT (MANDATORY):**
+Extract the Growth Gap from the Quant Scorecard's Implied Expectations section.
+This metric (Implied EPS Growth − Actual Historical Growth) is the single most important
+risk/reward signal in the report. Include it in your recommendation as follows:
+
+**Growth Gap: [+/-Xpp] ([OVERPRICED / UNDERPRICED / FAIRLY PRICED])**
+- Implied EPS Growth: X% | Actual Historical: Y%
+- Interpretation: [one sentence — what the market expects vs what the company delivers]
+
+Place this IMMEDIATELY after your recommendation line, BEFORE the rationale.
+If Growth Gap > +20pp: state explicitly that the market is pricing in growth the company
+has not historically achieved — this is a HEADWIND that must be addressed in the rationale.
+If Growth Gap < -10pp: state that the market underestimates the company's growth trajectory —
+this is a TAILWIND supporting a BUY case.
+If the quant could not compute a Growth Gap (negative EPS), state that and note the
+valuation is a binary turnaround bet, not a growth assessment.
+
+---
+
 **Then provide your recommendation:**
 
 - **Your Recommendation**: Buy, Sell, or Hold — a decisive stance grounded in the debate's strongest arguments. Avoid defaulting to Hold simply because both sides have valid points.
