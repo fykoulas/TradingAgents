@@ -31,6 +31,22 @@ def yf_retry(func, max_retries=3, base_delay=2.0):
                 raise
 
 
+# ── Shared Ticker cache ─────────────────────────────────────────────────────
+# Reuse the same yf.Ticker object per symbol across all vendor functions.
+# Benefits: shared HTTP session, cached .info property (avoids redundant calls).
+# Thread-safe: ThreadPoolExecutor assigns one symbol per worker, so each key
+# is written by at most one thread.
+_ticker_cache: dict[str, yf.Ticker] = {}
+
+
+def get_ticker(symbol: str) -> yf.Ticker:
+    """Return a cached yf.Ticker instance, reusing HTTP sessions."""
+    key = symbol.upper()
+    if key not in _ticker_cache:
+        _ticker_cache[key] = yf.Ticker(key)
+    return _ticker_cache[key]
+
+
 def _clean_dataframe(data: pd.DataFrame) -> pd.DataFrame:
     """Normalize a stock DataFrame for stockstats: parse dates, drop invalid rows, fill price gaps."""
     data["Date"] = pd.to_datetime(data["Date"], errors="coerce")
