@@ -29,6 +29,21 @@ def create_research_manager(llm, memory):
 
 ---
 
+**DATA COMPLETENESS CHECK (evaluate FIRST, before anything else):**
+Scan the analyst reports below for any mention of:
+- "[DATA QUALITY: ... UNAVAILABLE]" headers
+- "No cash flow data available" or similar missing-data statements
+- "INSUFFICIENT DATA" flags from any analyst
+If ANY core financial statement (cash flow, balance sheet, income statement) is flagged
+as missing or unavailable:
+1. Acknowledge the gap explicitly in your recommendation.
+2. A BUY recommendation is NOT permitted when critical financial data is missing.
+   The maximum recommendation with material data gaps is HOLD.
+3. If an analyst recommended BUY while ignoring a data gap, flag that as an analytical error.
+4. State what data would need to become available before upgrading to BUY.
+
+---
+
 **SECTOR-AWARE RATIO INTERPRETATION:**
 If the company is in Insurance, Banking, or REITs, standard financial ratios (D/E, Current Ratio, P/E) are structurally different from industrial companies. Do NOT treat a high D/E at an insurer or bank as a red flag without acknowledging that policyholder reserves (insurance) or deposits (banking) inflate reported liabilities. If an analyst report calls a financial-sector D/E "conservative" or "low" without sector context, flag it as an analytical error in your evaluation.
 

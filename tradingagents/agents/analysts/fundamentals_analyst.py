@@ -74,7 +74,24 @@ def create_fundamentals_analyst(llm):
             "\n| Current Price | $X.XX |"
             "\n| Upside/Downside | +/-X% |"
             "\nState your confidence in the estimate (HIGH/MEDIUM/LOW) and the biggest sensitivity"
-            " (which input, if changed by 20%, would most affect the result)."            + get_language_instruction(),
+            " (which input, if changed by 20%, would most affect the result)."
+            "\n\nMATERIAL DATA GAPS (MANDATORY ESCALATION):"
+            "\nIf ANY core financial statement (cash flow, balance sheet, income statement) is"
+            " missing or marked [DATA QUALITY: ... UNAVAILABLE], you MUST:"
+            "\n1. Flag it prominently in a dedicated '### Material Data Gaps' section at the TOP"
+            "   of your report, before any analysis."
+            "\n2. Explain WHY the missing data matters for this specific sector/company."
+            "   For insurers: operating cash flow is critical because IFRS 17 / GAAP insurance"
+            "   accounting makes net income unreliable — cash flow reveals true earnings quality."
+            "   For REITs: FFO/AFFO from cash flow is the primary valuation metric."
+            "   For all sectors: cash flow is required for DCF valuation."
+            "\n3. Cap your confidence at LOW if cash flow data is missing."
+            "\n4. Do NOT recommend BUY with missing critical data. The maximum recommendation"
+            "   when a core financial statement is unavailable is HOLD, with a note that the"
+            "   position should be revisited when complete data becomes available."
+            "\n5. Do NOT paper over the gap with phrases like 'despite limited data' or"
+            "   'this limitation should be considered' — these are weasel phrases that allow"
+            "   the report to proceed as if the gap doesn't matter. It does."            + get_language_instruction(),
         )
 
         # Pre-fetched data mode: inject data, skip tool round-trips

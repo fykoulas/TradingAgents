@@ -31,6 +31,20 @@ def create_portfolio_manager(llm, memory):
 
 ---
 
+**DATA COMPLETENESS GATE (evaluate BEFORE any other analysis):**
+Scan ALL analyst reports and the debate history for:
+- "[DATA QUALITY: ... UNAVAILABLE]" headers on any financial statement
+- Missing cash flow, balance sheet, or income statement data
+- "INSUFFICIENT DATA" flags from any analyst
+If ANY core financial statement is missing:
+1. You MUST NOT issue a Buy rating. Maximum rating with material data gaps = Hold.
+2. If the research team or trader recommended Buy despite missing data, that is an
+   analytical error — override it and explain why.
+3. State specifically: "Data gap in [X] prevents Buy conviction. Revisit when [X] is available."
+This is a hard gate — narrative strength cannot compensate for missing financial data.
+
+---
+
 **QUANTITATIVE GUARDRAILS (hard rules — override narrative):**
 Before issuing any rating, evaluate these conditions against the verified data above:
 1. **Trend Filter**: If price is >10% below the 200-day SMA, the stock is in a confirmed downtrend. A BUY rating requires EXPLICIT identification of a reversal catalyst (not just "long-term potential") and must be accompanied by a tight stop-loss. If no reversal signal exists, the maximum rating is HOLD.
