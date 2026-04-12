@@ -109,9 +109,10 @@ If the 6-month return is >50% AND the stock is near its 52-week high (within 10%
    that have NOT yet been priced in, and quantify the remaining upside.
 4. If the quant analyst's Implied Expectations section shows the market is pricing in growth
    that exceeds the company's historical rate, that is a red flag — not a buying opportunity.
-5. Treat the fundamentals analyst's Reverse Valuation Check and the quant's Implied Growth Gap
-   as key inputs. If both flag 'priced for perfection' or 'stretched,' BUY requires extraordinary
-   justification (e.g., a specific earnings catalyst in the next 30 days with quantifiable impact).
+5. Treat the fundamentals analyst's Reverse Valuation Check and the quant's Growth Gap
+   (Implied FCF Growth − Revenue CAGR) as key inputs. If both flag 'stretched' or
+   'priced for perfection,' BUY requires extraordinary justification (e.g., a specific
+   earnings catalyst in the next 30 days with quantifiable impact).
 
 ---
 
@@ -227,14 +228,14 @@ Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic val
 5. If the fundamentals analyst's growth rate assumption deviates >50% from the company's
    historical revenue/FCF CAGR (e.g., using 4% growth when historicals show 10%), flag this
    as a potential underestimate or overestimate and state which direction.
-6. **Growth Gap Direction Check**: Compare the quant's Implied EPS Growth vs Actual
-   Historical EPS Growth against the fundamentals' Implied FCF Growth (reverse DCF) vs Actual
-   Historical Revenue Growth. If one analyst concludes 'overpriced' (implied > actual)
-   while the other concludes 'underpriced' or 'conservative' (implied < actual),
-   flag the CONTRADICTION explicitly. State both figures, explain the discrepancy
-   (different metrics — EPS vs revenue, P/E-implied vs DCF-implied), and state which
-   conclusion is better supported by the underlying data. Do NOT let contradictory
-   growth gap conclusions pass without reconciliation.
+6. **Growth Gap Consistency Check**: The quant's Growth Gap is a GOLDEN VARIABLE
+   (Implied FCF Growth − Revenue CAGR), pre-computed in the data pipeline. Verify the
+   quant's reported Growth Gap matches the verified data. If the quant reports a
+   different Growth Gap value or uses a different formula (e.g., EPS-based instead of
+   FCF-based), flag as ANALYTICAL ERROR — the quant must use the verified golden variable.
+   Cross-check: the fundamentals analyst's Reverse Valuation Check should use the same
+   Implied FCF Growth value. If the two analysts report different Implied FCF Growth
+   figures, flag the CONTRADICTION.
 
 ---
 
@@ -328,20 +329,19 @@ If you cannot satisfy (a)-(d), you MUST align with the upstream consensus.
 
 **GROWTH GAP EXECUTIVE HIGHLIGHT (MANDATORY):**
 Extract the Growth Gap from the Quant Scorecard's Implied Expectations section.
-This metric (Implied EPS Growth − Actual Historical Growth) is the single most important
-risk/reward signal in the report. Include it in your recommendation as follows:
+This metric (Implied FCF Growth − Revenue CAGR) measures how much perpetual growth the
+market prices in versus the company's actual structural growth rate. Include it as follows:
 
-**Growth Gap: [+/-Xpp] ([OVERPRICED / UNDERPRICED / FAIRLY PRICED])**
-- Implied EPS Growth: X% | Actual Historical: Y%
+**Growth Gap: [+/-X.Xpp] ([OVERPRICED / UNDERPRICED / FAIRLY PRICED])**
+- Implied FCF Growth: X% | Revenue CAGR (Xyr): Y%
 - Interpretation: [one sentence — what the market expects vs what the company delivers]
 
 Place this IMMEDIATELY after your recommendation line, BEFORE the rationale.
-If Growth Gap > +20pp: state explicitly that the market is pricing in growth the company
-has not historically achieved — this is a HEADWIND that must be addressed in the rationale.
-If Growth Gap < -10pp: state that the market underestimates the company's growth trajectory —
+If Growth Gap > +8pp: state explicitly that the market is pricing in perpetual growth far
+exceeding the company's structural CAGR — this is a HEADWIND.
+If Growth Gap < -5pp: state that the market underestimates the company's growth trajectory —
 this is a TAILWIND supporting a BUY case.
-If the quant could not compute a Growth Gap (negative EPS), state that and note the
-valuation is a binary turnaround bet, not a growth assessment.
+If the quant could not compute a Growth Gap (N/A), state that and note the limitation.
 
 ---
 

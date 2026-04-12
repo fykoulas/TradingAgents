@@ -53,7 +53,7 @@ Before issuing any rating, evaluate these conditions against the verified data a
 4. **Valuation Stretch**: If ALL THREE of these are true: (a) price >40% above 200-SMA, (b) 6-month return >50%, (c) P/E > 30 — the stock is EXTENDED and the thesis may be fully priced in.
    - Momentum is NOT a buy reason. A stock up 80% in 6 months has already rewarded holders — the question is what upside remains for NEW capital.
    - You MUST cite specific, unpriced catalysts with quantifiable impact to justify Buy.
-   - If the quant’s Implied Growth Gap shows the market prices in growth exceeding historical rates, Buy requires identifying WHY future growth will exceed the past.
+   - If the quant's Growth Gap shows the market prices in perpetual growth exceeding the company's structural Revenue CAGR, Buy requires identifying WHY future growth will exceed the past.
    - If you cannot identify a specific catalyst beyond ‘strong momentum’ or ‘sector tailwinds’, the maximum rating is Hold.
 5. **If any guardrail blocks a BUY**, you MUST downgrade to HOLD or lower and state which guardrail was triggered.
 6. **Peer Valuation**: If the target trades at a >20% premium to peer median P/E or EV/EBITDA
