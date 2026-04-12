@@ -239,6 +239,43 @@ Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic val
 
 ---
 
+**DCF vs GROWTH GAP RECONCILIATION (MANDATORY — do this BEFORE your recommendation):**
+The Growth Gap (from the quant) and the DCF fair value (from the fundamentals analyst) both
+measure whether the stock is over/underpriced, but using different methodologies. They MUST
+point in the same direction. If they contradict, you MUST resolve the conflict explicitly.
+
+1. Extract: the fundamentals analyst's BASE CASE DCF fair value and the current stock price.
+   Compute: DCF Upside = (Fair Value − Current Price) / Current Price × 100.
+2. Extract: the quant's Growth Gap (Implied FCF Growth − Revenue CAGR).
+3. Check for CONTRADICTION:
+   • IF Growth Gap is POSITIVE (quant says OVERPRICED / STRETCHED) AND DCF fair value ≥
+     current price (fundamentals says UNDERVALUED):
+     → This is a CONTRADICTION. If a DCF at historical growth rates values the stock ABOVE
+       the market price, the market is NOT overpricing growth — it is slightly underpricing
+       the stock. The Growth Gap's "OVERPRICED" label is contradicted by the cash flow analysis.
+     → RESOLUTION: The DCF is the more complete model (explicit cash flows, discount rate,
+       terminal value). Growth Gap is a single-ratio screen. When they conflict, the DCF
+       takes precedence. State: "The Growth Gap (+X.Xpp) flags elevated implied growth,
+       but the DCF at historical growth rates (X%) values the stock at $X — X% ABOVE
+       current price. This means the market is not overpricing growth; it is pricing in
+       modest growth acceleration that is supported by the DCF. Growth Gap concern is
+       MITIGATED by DCF upside."
+     → The Growth Gap CANNOT be the primary SELL driver when the DCF shows upside.
+   • IF Growth Gap is NEGATIVE (quant says UNDERPRICED) AND DCF fair value < current price
+     (fundamentals says OVERVALUED):
+     → CONTRADICTION. State: "Growth Gap suggests underpricing (−X.Xpp), but the DCF at
+       historical growth rates values the stock at $X — X% BELOW current price. The DCF
+       contradicts the Growth Gap's bullish signal. The market may be pricing in growth
+       acceleration the DCF does not capture."
+     → Do NOT use the Growth Gap as a BUY driver when the DCF shows downside.
+   • IF Growth Gap and DCF agree (both say over/underpriced):
+     → ALIGNED. State the alignment and use both as supporting evidence.
+4. **The reconciliation conclusion MUST appear in your recommendation rationale.**
+   A report that presents "Growth Gap says overpriced" and "DCF says undervalued" without
+   resolving the contradiction is ANALYTICALLY INCOMPLETE.
+
+---
+
 **FCF RELIABILITY CHECK (MANDATORY):**
 Scan the verified data for FCF DECOMPOSITION fields. If present, check the following:
 1. **Base FCF Source**: The fundamentals analyst MUST have used the TTM quarterly sum as
@@ -332,13 +369,16 @@ Extract the Growth Gap from the Quant Scorecard's Implied Expectations section.
 This metric (Implied FCF Growth − Revenue CAGR) measures how much perpetual growth the
 market prices in versus the company's actual structural growth rate. Include it as follows:
 
-**Growth Gap: [+/-X.Xpp] ([OVERPRICED / UNDERPRICED / FAIRLY PRICED])**
+**Growth Gap: [+/-X.Xpp] ([OVERPRICED / STRETCHED / UNDERPRICED / FAIRLY PRICED])**
 - Implied FCF Growth: X% | Revenue CAGR (Xyr): Y%
+- DCF Reconciliation: [ALIGNED / CONTRADICTED — one sentence from the reconciliation check]
 - Interpretation: [one sentence — what the market expects vs what the company delivers]
 
 Place this IMMEDIATELY after your recommendation line, BEFORE the rationale.
-If Growth Gap > +8pp: state explicitly that the market is pricing in perpetual growth far
-exceeding the company's structural CAGR — this is a HEADWIND.
+If Growth Gap > +8pp AND DCF confirms overvaluation: state explicitly that both metrics
+agree the market is pricing in unrealistic growth — this is a strong HEADWIND.
+If Growth Gap > +3pp BUT DCF shows upside: state that the Growth Gap concern is MITIGATED
+by the DCF — the market is not overpricing, it is pricing modest acceleration.
 If Growth Gap < -5pp: state that the market underestimates the company's growth trajectory —
 this is a TAILWIND supporting a BUY case.
 If the quant could not compute a Growth Gap (N/A), state that and note the limitation.
