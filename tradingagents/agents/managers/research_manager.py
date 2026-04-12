@@ -111,6 +111,14 @@ Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic val
 5. If the fundamentals analyst's growth rate assumption deviates >50% from the company's
    historical revenue/FCF CAGR (e.g., using 4% growth when historicals show 10%), flag this
    as a potential underestimate or overestimate and state which direction.
+6. **Growth Gap Direction Check**: Compare the quant's Implied EPS Growth vs Actual
+   Historical EPS Growth against the fundamentals' Market-Implied Growth vs Actual
+   Historical Revenue Growth. If one analyst concludes 'overpriced' (implied > actual)
+   while the other concludes 'underpriced' or 'conservative' (implied < actual),
+   flag the CONTRADICTION explicitly. State both figures, explain the discrepancy
+   (different metrics — EPS vs revenue, P/E-implied vs DCF-implied), and state which
+   conclusion is better supported by the underlying data. Do NOT let contradictory
+   growth gap conclusions pass without reconciliation.
 
 ---
 
