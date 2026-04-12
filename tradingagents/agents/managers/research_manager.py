@@ -170,6 +170,27 @@ Scan ALL analyst reports for fair value estimates, DCF outputs, or intrinsic val
 
 ---
 
+**FCF RELIABILITY CHECK (MANDATORY):**
+Scan the verified data for FCF DECOMPOSITION fields. If present, check the following:
+1. **Base FCF Source**: The fundamentals analyst MUST have used the TTM quarterly sum as
+   the base FCF (NOT info.freeCashflow) when the verified data flags a FCF DISCREPANCY.
+   If the analyst's base FCF matches info.freeCashflow instead of TTM quarterly sum, flag
+   as ANALYTICAL ERROR — the analyst used a stale/incorrect aggregate figure.
+2. **FCF Volatility**: If the verified data shows FCF CV > 0.5 (HIGH FCF VOLATILITY),
+   check that the fundamentals analyst either: (a) used median quarterly FCF × 4 as base,
+   (b) applied wider sensitivity scenarios, or (c) switched to a revenue-based model.
+   A single-point DCF with volatile FCF and narrow scenarios is UNRELIABLE.
+3. **Turnaround Model Selection**: If the verified data flags TURNAROUND ALERT (negative
+   trailing EPS + positive FCF), the fundamentals analyst should NOT have used a standard
+   FCF-based DCF. Check that a revenue-based or earnings-power model was used instead.
+   If the analyst used a DCF with turnaround FCF data, the valuation is UNRELIABLE —
+   flag it and state that the recommendation cannot rely on the DCF fair value.
+4. **FCF Reconciliation Table**: Check that the fundamentals report includes a reconciliation
+   table showing TTM FCF, info.freeCashflow, discrepancy %, quarterly CV, base FCF used,
+   and model chosen. If missing, flag as an analytical gap.
+
+---
+
 **STOP-LOSS CONSISTENCY CHECK:**
 Scan the analyst reports for any stop-loss recommendations. Flag:
 1. If ANY analyst suggests using a moving average (50-SMA, 200-SMA) as a stop-loss level,
