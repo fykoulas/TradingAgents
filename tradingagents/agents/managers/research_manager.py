@@ -126,6 +126,17 @@ without comparing to specific peers by name and multiple — flag that as an ana
 The VERIFIED GROUND-TRUTH DATA block contains independently computed values for Current Price,
 6-Month Return, RSI, ATR, 52-Week High/Low, and SMA levels.
 
+**REVENUE GROWTH CONSISTENCY CHECK:**
+If the verified data includes a REVENUE TREND PROVENANCE section:
+1. Compare any revenue CAGR cited by analysts against the verified computed CAGRs.
+   If an analyst cites a CAGR that does not appear in the verified data (e.g., claims
+   '10% CAGR' when verified shows 2.3%), flag it as UNVERIFIED/HALLUCINATED data.
+2. If the verified data shows a GROWTH DECELERATION warning (recent YoY << historical CAGR),
+   any analyst who characterises the company as a 'growth story' without noting the deceleration
+   is producing a MISLEADING ANALYSIS. Flag this explicitly.
+3. The Bull Thesis MUST NOT use a stale historical CAGR as a growth argument if the company's
+   recent quarterly revenue trend is flat or declining.
+
 **CURRENT RATIO DECOMPOSITION CHECK:**
 If the verified data includes a CURRENT LIABILITY DECOMPOSITION section (triggered when CR < 1.0):
 1. Check whether the fundamentals analyst decomposed the current ratio or just flagged it

@@ -86,6 +86,15 @@ Before issuing any rating, evaluate these conditions against the verified data a
      accumulated losses' — a profitability problem, not a debt problem.
    - If any analyst confused thin equity with extreme debt, flag and correct the framing.
 
+8c. **Revenue Growth Consistency**: If the verified data includes REVENUE TREND PROVENANCE:
+   - Any revenue CAGR cited in the report that does not match the verified CAGRs is
+     HALLUCINATED or STALE. Use only verified growth figures in your assessment.
+   - If verified YoY growth is <2% but the report narrative says 'strong growth' or
+     cites a CAGR >5%, the growth thesis is WRONG. Do not let inflated growth claims
+     support a BUY recommendation.
+   - Quarterly revenue trend (flat/declining) overrides historical CAGR for forward-looking
+     assessment. A company with declining sequential revenue is NOT a growth investment.
+
 ---
 
 8b. **Current Ratio Decomposition**: If CR < 1.0 and the verified data shows a CURRENT
