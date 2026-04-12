@@ -74,6 +74,17 @@ If the 6-month return is >50% AND the stock is near its 52-week high (within 10%
 
 ---
 
+**PEER COMPARISON CHECK:**
+Scan the analyst reports for relative valuation against named industry peers.
+If ANY analyst says the stock is 'undervalued,' 'reasonably priced,' or 'attractively valued'
+without comparing to specific peers by name and multiple — flag that as an analytical weakness.
+A valuation judgment without peer context is incomplete.
+If peer comparison data shows the target trading at a >20% PREMIUM to peer median P/E or EV/EBITDA,
+your recommendation must acknowledge this and explain why the premium is justified.
+If it cannot be justified, downgrade to HOLD.
+
+---
+
 **MANDATORY — Dissent Section (do this FIRST, before your recommendation):**
 Before stating your recommendation, you MUST complete this structured dissent analysis:
 

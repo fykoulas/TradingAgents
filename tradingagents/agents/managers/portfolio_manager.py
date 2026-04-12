@@ -56,6 +56,11 @@ Before issuing any rating, evaluate these conditions against the verified data a
    - If the quant’s Implied Growth Gap shows the market prices in growth exceeding historical rates, Buy requires identifying WHY future growth will exceed the past.
    - If you cannot identify a specific catalyst beyond ‘strong momentum’ or ‘sector tailwinds’, the maximum rating is Hold.
 5. **If any guardrail blocks a BUY**, you MUST downgrade to HOLD or lower and state which guardrail was triggered.
+6. **Peer Valuation**: If the target trades at a >20% premium to peer median P/E or EV/EBITDA
+   (from the analyst reports), a BUY requires explicit justification for the premium.
+   'Strong growth' or 'market leader' is insufficient — you must cite specific metrics
+   (faster revenue growth, higher margins, better ROE) that quantitatively justify the premium.
+   If no quantitative justification exists, maximum rating is Hold.
 
 ---
 

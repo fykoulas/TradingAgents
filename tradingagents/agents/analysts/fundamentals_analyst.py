@@ -100,6 +100,26 @@ def create_fundamentals_analyst(llm):
             "\n| Growth Gap | Implied exceeds actual by X% — (reasonable / stretched / priced for perfection) |"
             "\n| 6-Month Return | X% |"
             "\n| Is thesis priced in? | YES / PARTIALLY / NO — with explanation |"
+            "\n\nPEER COMPARISON (MANDATORY — use the INDUSTRY PEER COMPARISON data provided):"
+            "\nIf peer comparison data is provided, you MUST include a '### Relative Valuation'"
+            " section that:"
+            "\n1. Names the 3-5 closest peers by market cap and business model."
+            "\n2. Compares the target's P/E, Forward P/E, EV/EBITDA, and profit margins against"
+            "   the peer group. Use the ACTUAL peer data provided — do NOT fabricate peer metrics."
+            "\n3. States whether the target trades at a PREMIUM or DISCOUNT to peers, and by how much."
+            "\n4. If the target trades at a premium, justify WHY it deserves it (faster growth,"
+            "   better margins, dominant market position) with specific numbers."
+            "\n5. If you cannot justify a premium and the target's multiples are above peer median,"
+            "   flag it as a RELATIVE OVERVALUATION risk."
+            "\n6. Present this as a table:"
+            "\n| Metric | Target | Peer Median | Premium/Discount |"
+            "\n|--------|--------|-------------|-----------------|"
+            "\n| P/E (TTM) | | | +/-X% |"
+            "\n| Fwd P/E | | | +/-X% |"
+            "\n| EV/EBITDA | | | +/-X% |"
+            "\n| Profit Margin | | | |"
+            "\n\nSaying a stock is 'undervalued' or 'reasonably priced' without peer context is"
+            " analytically empty. Every valuation judgment must be RELATIVE to comparable companies."
             "\n\nMATERIAL DATA GAPS (MANDATORY ESCALATION):"
             "\nIf ANY core financial statement (cash flow, balance sheet, income statement) is"
             " missing or marked [DATA QUALITY: ... UNAVAILABLE], you MUST:"
@@ -130,6 +150,8 @@ def create_fundamentals_analyst(llm):
                 + prefetched.get("cashflow", "N/A")
                 + "\n\n=== PRE-FETCHED INCOME STATEMENT (Quarterly) ===\n"
                 + prefetched.get("income_statement", "N/A")
+                + "\n\n=== INDUSTRY PEER COMPARISON ===\n"
+                + prefetched.get("peer_comps", "N/A")
             )
             mode_instruction = (
                 "All required fundamental data has been pre-fetched"

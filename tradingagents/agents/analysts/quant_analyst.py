@@ -72,12 +72,16 @@ def create_quant_analyst(llm):
             "\n| 6-month return | X% |"
             "\n"
             "\n### Valuation"
-            "\n| Metric | Value | Sector Median |"
-            "\n|--------|-------|--------------|"
-            "\n| P/E (TTM) | | |"
-            "\n| EV/EBITDA | | |"
-            "\n| P/FCF | | |"
-            "\n| PEG ratio | | |"
+            "\n| Metric | Value | Peer Median | Premium/Discount |"
+            "\n|--------|-------|-------------|-----------------|"
+            "\n| P/E (TTM) | | | +/-X% |"
+            "\n| EV/EBITDA | | | +/-X% |"
+            "\n| P/FCF | | | +/-X% |"
+            "\n| PEG ratio | | | +/-X% |"
+            "\nIMPORTANT: Use the INDUSTRY PEER COMPARISON data provided to fill the 'Peer Median'"
+            " column with ACTUAL peer medians — NOT generic sector averages."
+            " Compute Premium/Discount = (Target - Peer Median) / Peer Median × 100."
+            " If peer data is unavailable, write 'N/A' — do NOT fabricate medians."
             "\n"
             "\n### Financial Health"
             "\n| Metric | Value |"
@@ -159,6 +163,8 @@ def create_quant_analyst(llm):
                 + prefetched.get("balance_sheet", "N/A")
                 + "\n\n=== PRE-FETCHED INCOME STATEMENT (Quarterly) ===\n"
                 + prefetched.get("income_statement", "N/A")
+                + "\n\n=== INDUSTRY PEER COMPARISON ===\n"
+                + prefetched.get("peer_comps", "N/A")
             )
             mode_instruction = (
                 "All required quantitative data has been pre-fetched"
