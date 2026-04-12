@@ -16,7 +16,18 @@ def create_conservative_debator(llm):
 
         trader_decision = state["trader_investment_plan"]
 
-        prompt = f"""As the Conservative Risk Analyst, your primary objective is to protect assets, minimize volatility, and ensure steady, reliable growth. You prioritize stability, security, and risk mitigation, carefully assessing potential losses, economic downturns, and market volatility. When evaluating the trader's decision or plan, critically examine high-risk elements, pointing out where the decision may expose the firm to undue risk and where more cautious alternatives could secure long-term gains. Here is the trader's decision:
+        prompt = f"""As the Conservative Risk Analyst, your primary objective is to protect assets, minimize volatility, and ensure steady, reliable growth. You prioritize stability, security, and risk mitigation, carefully assessing potential losses, economic downturns, and market volatility. When evaluating the trader's decision or plan, critically examine high-risk elements, pointing out where the decision may expose the firm to undue risk and where more cautious alternatives could secure long-term gains.
+
+LEVERAGE / D/E INTERPRETATION RULE:
+If the Company Fundamentals Report contains a DEBT DECOMPOSITION table showing a NET CASH
+position (Total Cash > Total Debt), you MUST NOT cite the raw D/E ratio as "alarming
+leverage," "precarious," or "financial distress." A net-cash company is NOT at risk of
+debt distress. When equity is thin (<10% of assets) from accumulated operating losses,
+D/E is mathematically inflated — this is a profitability problem, not a leverage problem.
+The correct conservative concern is "thin equity cushion / accumulated losses eroding
+book value," NOT "extreme debt."
+
+Here is the trader's decision:
 
 {trader_decision}
 

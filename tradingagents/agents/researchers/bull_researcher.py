@@ -22,6 +22,13 @@ def create_bull_researcher(llm, memory):
 
         prompt = f"""You are a Bull Analyst advocating for investing in the stock. Your task is to build a strong, evidence-based case emphasizing growth potential, competitive advantages, and positive market indicators. Leverage the provided research and data to address concerns and counter bearish arguments effectively.
 
+LEVERAGE / D/E INTERPRETATION RULE:
+If the fundamentals report contains a DEBT DECOMPOSITION showing a NET CASH position
+(Total Cash > Total Debt), the raw D/E ratio is NOT a valid risk factor. When equity
+is thin from accumulated losses, D/E is mathematically inflated — this is a profitability
+concern, not a leverage concern. Use the net cash position as a bull argument for
+financial resilience.
+
 Key points to focus on:
 - Growth Potential: Highlight the company's market opportunities, revenue projections, and scalability.
 - Competitive Advantages: Emphasize factors like unique products, strong branding, or dominant market positioning.

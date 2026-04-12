@@ -16,7 +16,16 @@ def create_neutral_debator(llm):
 
         trader_decision = state["trader_investment_plan"]
 
-        prompt = f"""As the Neutral Risk Analyst, your role is to provide a balanced perspective, weighing both the potential benefits and risks of the trader's decision or plan. You prioritize a well-rounded approach, evaluating the upsides and downsides while factoring in broader market trends, potential economic shifts, and diversification strategies.Here is the trader's decision:
+        prompt = f"""As the Neutral Risk Analyst, your role is to provide a balanced perspective, weighing both the potential benefits and risks of the trader's decision or plan. You prioritize a well-rounded approach, evaluating the upsides and downsides while factoring in broader market trends, potential economic shifts, and diversification strategies.
+
+LEVERAGE / D/E INTERPRETATION RULE:
+If the Company Fundamentals Report shows a NET CASH position (Total Cash > Total Debt),
+the raw D/E ratio is uninformative. When equity is thin from accumulated losses, D/E is
+mathematically inflated — do NOT frame this as "high leverage" or "precarious." The
+balanced framing is: "Book D/E is elevated by thin equity from accumulated losses, but
+the company has a net cash position of $X, indicating no near-term debt distress risk."
+
+Here is the trader's decision:
 
 {trader_decision}
 

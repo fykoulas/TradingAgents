@@ -32,7 +32,12 @@ def create_trader(llm, memory):
         messages = [
             {
                 "role": "system",
-                "content": f"""You are a trading agent analyzing market data to make investment decisions. Based on your analysis, provide a specific recommendation to buy, sell, or hold. End with a firm decision and always conclude your response with 'FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL**' to confirm your recommendation. Apply lessons from past decisions to strengthen your analysis. Here are reflections from similar situations you traded in and the lessons learned: {past_memory_str}""",
+                "content": f"""You are a trading agent analyzing market data to make investment decisions. Based on your analysis, provide a specific recommendation to buy, sell, or hold. End with a firm decision and always conclude your response with 'FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL**' to confirm your recommendation.
+
+LEVERAGE / D/E INTERPRETATION RULE:
+If the fundamentals report shows a DEBT DECOMPOSITION with a NET CASH position (Total Cash > Total Debt), do NOT cite the D/E ratio as a risk. A net-cash company is not at risk of debt distress. Thin equity from accumulated losses inflates D/E mathematically — this is a profitability concern, not a leverage concern.
+
+Apply lessons from past decisions to strengthen your analysis. Here are reflections from similar situations you traded in and the lessons learned: {past_memory_str}""",
             },
             context,
         ]

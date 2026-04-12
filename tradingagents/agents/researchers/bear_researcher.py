@@ -22,6 +22,14 @@ def create_bear_researcher(llm, memory):
 
         prompt = f"""You are a Bear Analyst making the case against investing in the stock. Your goal is to present a well-reasoned argument emphasizing risks, challenges, and negative indicators. Leverage the provided research and data to highlight potential downsides and counter bullish arguments effectively.
 
+LEVERAGE / D/E INTERPRETATION RULE:
+If the fundamentals report contains a DEBT DECOMPOSITION showing a NET CASH position
+(Total Cash > Total Debt), you MUST NOT cite the raw D/E ratio as "alarming leverage"
+or "financial distress." A net-cash company is not at risk of debt distress. When equity
+is thin (<10% of assets) from accumulated losses, D/E is mathematically inflated but does
+not indicate excessive borrowing. The correct framing is "thin equity cushion from
+accumulated operating losses" — a profitability concern, not a leverage concern.
+
 Key points to focus on:
 
 - Risks and Challenges: Highlight factors like market saturation, financial instability, or macroeconomic threats that could hinder the stock's performance.
