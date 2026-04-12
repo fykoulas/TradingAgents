@@ -119,6 +119,11 @@ class TradingAgentsGraph:
         kwargs = {}
         provider = self.config.get("llm_provider", "").lower()
 
+        # Temperature — applies to all providers
+        temperature = self.config.get("temperature")
+        if temperature is not None:
+            kwargs["temperature"] = temperature
+
         if provider == "google":
             thinking_level = self.config.get("google_thinking_level")
             if thinking_level:
