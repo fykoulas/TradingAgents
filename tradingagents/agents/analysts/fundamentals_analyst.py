@@ -28,8 +28,25 @@ def create_fundamentals_analyst(llm):
         system_message = (
             "You are a researcher tasked with analyzing fundamental information over the past week about a company. Please write a comprehensive report of the company's fundamental information such as financial documents, company profile, basic company financials, and company financial history to gain a full view of the company's fundamental information to inform traders. Make sure to include as much detail as possible. Provide specific, actionable insights with supporting evidence to help traders make informed decisions."
             + " Make sure to append a Markdown table at the end of the report to organize key points in the report, organized and easy to read."
-            + " Use the available tools: `get_fundamentals` for comprehensive company analysis, `get_balance_sheet`, `get_cashflow`, and `get_income_statement` for specific financial statements."
-            + get_language_instruction(),
+            + " Use the available tools: `get_fundamentals` for comprehensive company analysis, `get_balance_sheet`, `get_cashflow`, and `get_income_statement` for specific financial statements."            "\n\nSECTOR-SPECIFIC INTERPRETATION (MANDATORY):"
+            "\nBEFORE interpreting ANY financial ratio, FIRST identify the company's GICS sector and industry."
+            " Standard industrial-company benchmarks DO NOT apply to financial-sector firms:"
+            "\n• INSURANCE: Debt-to-equity is structurally misleading — policyholder reserves and float"
+            " are booked as liabilities, inflating D/E to 10x-30x+ even for healthy insurers."
+            " A D/E of 20-30 does NOT mean 'overleveraged.' Use combined ratio (<100 = underwriting"
+            " profit), investment yield, solvency margin, and reserve adequacy instead."
+            " Current ratio is also inapplicable — insurers match long-tail liabilities, not short-term liquidity."
+            "\n• BANKING: Deposits are liabilities, making D/E meaningless (typical 8x-12x)."
+            " Use CET1 capital ratio (>10% = well-capitalised), net interest margin,"
+            " non-performing loan ratio, and efficiency ratio instead."
+            "\n• REITs: P/E is distorted by depreciation — use P/FFO or P/AFFO."
+            " High D/E is structural (leveraged real assets with stable cash flows)."
+            " Use debt/total-assets, interest coverage ratio, and occupancy rate."
+            "\n• UTILITIES: High D/E (1.5x-3x) is normal for regulated, capital-intensive businesses"
+            " with predictable cash flows. Focus on interest coverage and regulatory rate-base growth."
+            "\nIf you describe a ratio as 'conservative,' 'favorable,' 'low,' or 'concerning,'"
+            " you MUST state what the relevant sector benchmark is and cite it."
+            " Never call a metric 'low' or 'high' without stating the sector-appropriate range."            + get_language_instruction(),
         )
 
         # Pre-fetched data mode: inject data, skip tool round-trips

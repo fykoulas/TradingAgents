@@ -29,6 +29,11 @@ def create_research_manager(llm, memory):
 
 ---
 
+**SECTOR-AWARE RATIO INTERPRETATION:**
+If the company is in Insurance, Banking, or REITs, standard financial ratios (D/E, Current Ratio, P/E) are structurally different from industrial companies. Do NOT treat a high D/E at an insurer or bank as a red flag without acknowledging that policyholder reserves (insurance) or deposits (banking) inflate reported liabilities. If an analyst report calls a financial-sector D/E "conservative" or "low" without sector context, flag it as an analytical error in your evaluation.
+
+---
+
 **QUANTITATIVE REALITY CHECK (evaluate BEFORE reading the debate):**
 Review the verified market data above. Before proceeding, answer:
 - Is the stock above or below the 200-day SMA? By how much?
