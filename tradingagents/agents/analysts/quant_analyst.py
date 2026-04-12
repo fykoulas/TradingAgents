@@ -69,6 +69,7 @@ def create_quant_analyst(llm):
             "\n| ATR (14) | $X.XX |"
             "\n| ATR% (ATR/Price) | X.XX% (classify: very low <0.5%, low 0.5-1.5%, moderate 1.5-3%, high 3-5%, very high >5%) |"
             "\n| 2×ATR Stop | $X.XX (= Price − 2×ATR) |"
+            "\n| Max Drawdown % (2×ATR) | X.X% (= 2×ATR / Price × 100 — if >15%, flag as WIDE STOP) |"
             "\n| 6-month return | X% |"
             "\n"
             "\n### Valuation"

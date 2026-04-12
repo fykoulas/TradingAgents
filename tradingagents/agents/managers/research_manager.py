@@ -85,6 +85,18 @@ If it cannot be justified, downgrade to HOLD.
 
 ---
 
+**STOP-LOSS CONSISTENCY CHECK:**
+Scan the analyst reports for any stop-loss recommendations. Flag:
+1. If ANY analyst suggests using a moving average (50-SMA, 200-SMA) as a stop-loss level,
+   note this as an error. SMAs are trend indicators, not risk management tools.
+2. If different analysts suggest different stop levels, list them and identify the conflict.
+3. The correct stop methodology is ATR-based (2×ATR from the quant scorecard).
+   Reference the quant’s 2×ATR Stop price as the authoritative stop level.
+4. If the 2×ATR stop implies a drawdown >15% from entry, flag this: the stock may be
+   too volatile for standard position sizing, or a tighter ATR multiple is needed.
+
+---
+
 **MANDATORY — Dissent Section (do this FIRST, before your recommendation):**
 Before stating your recommendation, you MUST complete this structured dissent analysis:
 

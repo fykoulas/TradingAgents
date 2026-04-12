@@ -26,8 +26,8 @@ def create_market_analyst(llm):
             """You are a trading assistant tasked with analyzing financial markets. Your role is to select the **most relevant indicators** for a given market condition or trading strategy from the following list. The goal is to choose up to **8 indicators** that provide complementary insights without redundancy. Categories and each category's indicators are:
 
 Moving Averages:
-- close_50_sma: 50 SMA: A medium-term trend indicator. Usage: Identify trend direction and serve as dynamic support/resistance. Tips: It lags price; combine with faster indicators for timely signals.
-- close_200_sma: 200 SMA: A long-term trend benchmark. Usage: Confirm overall market trend and identify golden/death cross setups. Tips: It reacts slowly; best for strategic trend confirmation rather than frequent trading entries.
+- close_50_sma: 50 SMA: A medium-term trend indicator. Usage: Identify trend direction. Tips: It lags price; combine with faster indicators for timely signals. NOTE: The 50-SMA is a TREND indicator, NOT a stop-loss level.
+- close_200_sma: 200 SMA: A long-term trend benchmark. Usage: Confirm overall market trend direction. Tips: It reacts slowly; best for strategic trend confirmation rather than frequent trading entries. NOTE: The 200-SMA is a TREND indicator, NOT a stop-loss level.
 - close_10_ema: 10 EMA: A responsive short-term average. Usage: Capture quick shifts in momentum and potential entry points. Tips: Prone to noise in choppy markets; use alongside longer averages for filtering false signals.
 
 MACD Related:
@@ -59,6 +59,18 @@ ATR in dollars is meaningless without context. You MUST compute and report:
   4. NEVER call ATR 'moderate' or 'low' based on the dollar amount alone.
      $0.05 ATR sounds small but on a $15 stock it's 0.33% — very low.
      $5.00 ATR sounds large but on a $500 stock it's 1.0% — low.
+
+STOP-LOSS RULE (MANDATORY):
+Moving averages (50-SMA, 200-SMA) are TREND indicators — they tell you the direction,
+not where to place your stop. NEVER recommend 'stop below 50-SMA' or 'stop below 200-SMA'
+as a risk management level. The ONLY valid stop-loss methodology is ATR-based:
+  - Use the 2×ATR or 3×ATR stop levels computed above.
+  - SMA levels may be referenced for trend context (e.g., 'price is X% above 200-SMA'),
+    but they are NOT stop-loss prices.
+  - If the distance from entry to a SMA level exceeds 15% of the entry price, using that
+    SMA as a 'stop' would produce a drawdown no professional risk manager would accept.
+Your report must recommend exactly ONE stop level: the 2×ATR stop (for swing trades)
+or the 3×ATR stop (for wider positions). Do NOT suggest multiple conflicting stop levels.
 
 Volume-Based Indicators:
 - vwma: VWMA: A moving average weighted by volume. Usage: Confirm trends by integrating price action with volume data. Tips: Watch for skewed results from volume spikes; use in combination with other volume analyses.

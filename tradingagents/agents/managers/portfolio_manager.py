@@ -98,6 +98,23 @@ Before issuing any rating, evaluate these conditions against the verified data a
 4. **Executive Summary**: Concise action plan covering entry strategy, key risk levels, and time horizon.
 5. **Kill Criteria**: Specific, measurable conditions that would invalidate this thesis.
 
+**STOP-LOSS RULES (MANDATORY for Buy and Overweight ratings):**
+Your Executive Summary MUST include exactly ONE stop-loss price. This stop MUST follow these rules:
+a) Use the quant analyst’s 2×ATR Stop price. This is the ONLY valid stop-loss methodology.
+b) Do NOT use SMA levels (50-SMA, 200-SMA) as stop-loss prices. Moving averages are TREND
+   indicators — they tell you direction, not where to exit. A ‘200-SMA stop’ on a stock trading
+   at $400 with 200-SMA at $253 means accepting a 36% drawdown — no institutional risk manager
+   would permit this.
+c) Compute and state the max drawdown %: (Entry Price − Stop Price) / Entry Price × 100.
+   If this exceeds 15%, you MUST either:
+   - Tighten the stop (e.g., use 1.5×ATR instead of 2×ATR), OR
+   - Reduce position size proportionally, OR
+   - Downgrade the rating (a trade requiring >15% drawdown tolerance has poor risk/reward).
+d) Your stop price must be a SINGLE, SPECIFIC number — not a range, not ‘near $X’, not multiple
+   conflicting levels. A trader reading your report must know exactly where to set the stop.
+e) If multiple analyst reports suggest different stop levels, RESOLVE the conflict explicitly.
+   Do not present contradictory stops. State which one you chose and why.
+
 ---
 
 **Risk Analysts Debate History (for reference — do NOT simply echo):**
