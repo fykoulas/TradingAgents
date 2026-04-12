@@ -19,6 +19,23 @@ def create_quant_analyst(llm):
         verified_data = state.get("verified_data", "")
         prefetched = state.get("prefetched_data") or {}
 
+        # Extract Implied FCF Growth from verified data and inject as a
+        # clearly labeled variable so the LLM doesn't have to parse it.
+        import re as _re
+        _ifcg_match = _re.search(
+            r"Implied FCF Growth \(reverse DCF[^)]*\):\s*([\d.-]+)%",
+            verified_data,
+        )
+        _implied_fcf_val = _ifcg_match.group(1) + "%" if _ifcg_match else "N/A"
+        _golden_injection = (
+            f"\n\n══ GOLDEN VARIABLE INJECTION ══\n"
+            f"Implied FCF Growth (authoritative): {_implied_fcf_val}\n"
+            f"Copy this EXACT value into the 'Implied FCF Growth (reverse DCF)' row "
+            f"of your Implied Expectations table. Do NOT recompute.\n"
+            f"══════════════════════════════\n"
+        )
+        verified_data = verified_data + _golden_injection
+
         tools = [
             get_stock_data,
             get_indicators,

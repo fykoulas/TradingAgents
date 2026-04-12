@@ -268,16 +268,18 @@ Scan the analyst reports for any stop-loss recommendations. Flag:
 Before stating your recommendation, you MUST complete this structured dissent analysis:
 
 1. **Upstream Signal Tally (count FIRST)**:
-   Scan the analyst reports for their FINAL VERDICT (the explicit BUY / HOLD / SELL
-   stated in their conclusion). Tally ONLY the three analyst verdicts:
-   | Source | Final Verdict (BUY / HOLD / SELL) |
-   |--------|-----------------------------------|
-   | Quant Scorecard | (copy their explicit verdict) |
-   | Market Analysis | (copy their explicit verdict) |
-   | Fundamentals Analyst | (copy their explicit verdict) |
+   Search each analyst report for the exact string 'FINAL TRANSACTION PROPOSAL:'
+   followed by **BUY**, **HOLD**, or **SELL**. Copy that verdict into the table below.
+   | Source | Final Transaction Proposal |
+   |--------|--------------------------|
+   | Market Analysis | (extract from Market report) |
+   | Fundamentals Analyst | (extract from Fundamentals report) |
+   | Quant Scorecard | (extract from Quant Scorecard — provided separately below) |
    State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY (out of 3 analyst votes).'
    COUNTING RULES (HARD — NO EXCEPTIONS):
    • ONLY the three rows above are VOTES. The tally must sum to exactly 3.
+   • Each vote is the analyst's OWN stated verdict — the line containing
+     'FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL**' in their report.
    • The Bull Thesis and Bear Thesis are DEBATE ARGUMENTS, not votes.
      A 'strong bull case' is NOT a BUY vote. A 'strong bear case' is NOT a SELL vote.
      Do NOT count thesis strength as a directional signal in the tally.
