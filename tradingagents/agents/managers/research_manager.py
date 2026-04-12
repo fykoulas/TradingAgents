@@ -278,6 +278,14 @@ Before stating your recommendation, you MUST complete this structured dissent an
    | Fundamentals Analyst | (extract from Fundamentals report) |
    | Quant Scorecard | (extract from Quant Scorecard — provided separately below) |
    State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY (out of 5 analyst votes).'
+   ARITHMETIC CHECK: Verify X + Y + Z = 5. If it does not, you dropped a vote —
+   go back to the table, re-read every row, and recount. Do NOT proceed until the
+   sum is exactly 5.
+   TALLY→PROSE CONSISTENCY: After writing the tally sentence, re-read it and compare
+   each number against the table above. Every analyst in the table must appear in the
+   tally. Name each analyst's vote in parentheses:
+   Example: 'Upstream consensus: 2 SELL (News, Sentiment), 1 HOLD (Market), 2 BUY
+   (Fundamentals, Quant) — 5 of 5 votes counted.'
    COUNTING RULES (HARD — NO EXCEPTIONS):
    • ALL FIVE rows above are VOTES. The tally must sum to exactly 5.
    • Each vote is the analyst's OWN stated verdict — the line containing
