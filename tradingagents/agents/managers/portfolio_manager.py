@@ -61,6 +61,12 @@ Before issuing any rating, evaluate these conditions against the verified data a
    'Strong growth' or 'market leader' is insufficient — you must cite specific metrics
    (faster revenue growth, higher margins, better ROE) that quantitatively justify the premium.
    If no quantitative justification exists, maximum rating is Hold.
+   **Peer Relevance Gate**: If the peer data flags a PEER SIZE MISMATCH (peers >10x target
+   market cap), peer-based valuation arguments have LOW WEIGHT in your decision. A micro-cap
+   trading at a 'discount' to large-cap industry peers is NOT evidence of undervaluation —
+   it reflects the appropriate size/liquidity risk premium. Do NOT cite peer discount as a
+   reason to buy unless size-adjusted comparables were used or genuine business competitors
+   were identified.
 7. **Valuation Anchor**: Use the fundamentals analyst's BASE CASE fair value (from the
    sensitivity table) as YOUR anchor valuation. If any other section (quant scorecard,
    debate, trader plan) cites a different fair value, you MUST reconcile the difference.

@@ -106,6 +106,19 @@ without comparing to specific peers by name and multiple — flag that as an ana
    to peers, flag this as WRONG METRIC. Franchise revenue recognition includes system-wide
    sales that inflate the revenue denominator. The correct comparison is OPERATING MARGIN.
    A net margin gap flagged as a 'weakness' for a franchisor is an analytical error.
+4. **Peer Size Relevance**: Check whether the peer data includes a PEER SIZE MISMATCH or
+   PEER SIZE GAP warning. If it does:
+   a) Scan the analyst reports — did they acknowledge the size gap? If any analyst used
+      peer multiples as-is without noting the market cap disparity, flag as ANALYTICAL WEAKNESS.
+   b) If median peer market cap is >10x the target, peer-based 'undervalued' or 'overvalued'
+      conclusions have LOW CONFIDENCE. Larger companies trade at higher multiples due to
+      liquidity, coverage, and lower risk. A small-cap 'discount' to large-cap peers may
+      simply reflect the appropriate size premium, NOT undervaluation.
+   c) Check: did the fundamentals analyst identify any ACTUAL business competitors (same
+      product market, similar revenue scale) beyond the classification peers? If not, note
+      that no genuine comparables were identified and peer-based valuation is unreliable.
+   d) If peer relevance is LOW and the recommendation relies heavily on relative valuation
+      ('undervalued vs peers'), flag that the thesis foundation is weak.
 
 ---
 
