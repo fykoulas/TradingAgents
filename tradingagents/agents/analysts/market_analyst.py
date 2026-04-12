@@ -44,6 +44,22 @@ Volatility Indicators:
 - boll_lb: Bollinger Lower Band: Typically 2 standard deviations below the middle line. Usage: Indicates potential oversold conditions. Tips: Use additional analysis to avoid false reversal signals.
 - atr: ATR: Averages true range to measure volatility. Usage: Set stop-loss levels and adjust position sizes based on current market volatility. Tips: It's a reactive measure, so use it as part of a broader risk management strategy.
 
+ATR INTERPRETATION (MANDATORY when ATR is selected):
+ATR in dollars is meaningless without context. You MUST compute and report:
+  1. ATR% = ATR / Current Price × 100 (this is the daily volatility as a percentage)
+  2. Classify volatility using ATR%:
+     - < 0.5%: VERY LOW volatility (extremely tight range, typical of stable large-caps or low-liquidity ADRs)
+     - 0.5%–1.5%: LOW volatility
+     - 1.5%–3.0%: MODERATE volatility (normal for most liquid stocks)
+     - 3.0%–5.0%: HIGH volatility
+     - > 5.0%: VERY HIGH volatility (small-caps, biotechs, meme stocks)
+  3. Compute actionable stop levels:
+     - Swing stop (2× ATR): Current Price − (2 × ATR) = $X.XX
+     - Wide stop (3× ATR): Current Price − (3 × ATR) = $X.XX
+  4. NEVER call ATR 'moderate' or 'low' based on the dollar amount alone.
+     $0.05 ATR sounds small but on a $15 stock it's 0.33% — very low.
+     $5.00 ATR sounds large but on a $500 stock it's 1.0% — low.
+
 Volume-Based Indicators:
 - vwma: VWMA: A moving average weighted by volume. Usage: Confirm trends by integrating price action with volume data. Tips: Watch for skewed results from volume spikes; use in combination with other volume analyses.
 
