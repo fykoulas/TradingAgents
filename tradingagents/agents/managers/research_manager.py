@@ -268,16 +268,27 @@ Scan the analyst reports for any stop-loss recommendations. Flag:
 Before stating your recommendation, you MUST complete this structured dissent analysis:
 
 1. **Upstream Signal Tally (count FIRST)**:
-   Scan ALL analyst reports and the debate for directional signals. Tally them explicitly:
-   | Source | Signal |
-   |--------|--------|
-   | Quant Scorecard | BUY / HOLD / SELL |
-   | Market Analysis | BUY / HOLD / SELL |
-   | Fundamentals Analyst | BUY / HOLD / SELL |
-   | Bull Thesis conclusion | strong / moderate / weak |
-   | Bear Thesis conclusion | strong / moderate / weak |
-   State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY.'
-   This tally constrains your recommendation — see Override Rules below.
+   Scan the analyst reports for their FINAL VERDICT (the explicit BUY / HOLD / SELL
+   stated in their conclusion). Tally ONLY the three analyst verdicts:
+   | Source | Final Verdict (BUY / HOLD / SELL) |
+   |--------|-----------------------------------|
+   | Quant Scorecard | (copy their explicit verdict) |
+   | Market Analysis | (copy their explicit verdict) |
+   | Fundamentals Analyst | (copy their explicit verdict) |
+   State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY (out of 3 analyst votes).'
+   COUNTING RULES (HARD — NO EXCEPTIONS):
+   • ONLY the three rows above are VOTES. The tally must sum to exactly 3.
+   • The Bull Thesis and Bear Thesis are DEBATE ARGUMENTS, not votes.
+     A 'strong bull case' is NOT a BUY vote. A 'strong bear case' is NOT a SELL vote.
+     Do NOT count thesis strength as a directional signal in the tally.
+   • If you cannot find an explicit verdict from an analyst, count it as HOLD.
+   • The tally constrains your recommendation — see Override Rules below.
+
+   **Thesis Context (for qualitative weighting only — NOT counted in the tally):**
+   | Debate Side | Conviction |
+   |-------------|------------|
+   | Bull Thesis | strong / moderate / weak |
+   | Bear Thesis | strong / moderate / weak |
 
 2. **Strongest 3 arguments AGAINST your recommendation**: List the most compelling reasons from the opposing side of the debate. Do not dismiss them — steel-man them.
 3. **What would change your mind**: State 1-2 specific, measurable conditions that would flip your recommendation (e.g., "If revenue growth drops below 10% next quarter" or "If the stock breaks below $X support").
