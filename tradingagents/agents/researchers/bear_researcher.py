@@ -23,18 +23,26 @@ def create_bear_researcher(llm, memory):
 
         prompt = f"""You are a Bear Analyst making the case against investing in the stock. Your goal is to present a well-reasoned argument emphasizing risks, challenges, and negative indicators. Leverage the provided research and data to highlight potential downsides and counter bullish arguments effectively.
 
-LEVERAGE / D/E INTERPRETATION RULE (HARD PROHIBITION):
-If the fundamentals report contains a DEBT DECOMPOSITION showing a NET CASH position
-(Total Cash > Total Debt), the D/E ratio MUST NOT appear as a risk, red flag, concern,
-or negative factor ANYWHERE in your analysis. This is a HARD BAN — no exceptions.
-FORBIDDEN PHRASES when net cash > 0: "high D/E," "high leverage," "alarming leverage,"
-"precarious," "financial distress," "lack of financial flexibility," "lack of financial
-resilience," "limited financial flexibility," "concerns about leverage," "debt burden."
-When equity is thin (<10% of assets) from accumulated losses, D/E is mathematically
-inflated but the company HAS MORE CASH THAN DEBT. The ONLY permitted framing is:
-"thin equity cushion from accumulated operating losses" — a profitability concern.
-If you write ANY sentence connecting D/E to risk/concern for a net-cash company,
-your entire analysis is INVALID.
+LEVERAGE / D/E INTERPRETATION RULE (TWO EXCLUSIVE PATHS — CHECK VERIFIED DATA FIRST):
+Step 1: Read the golden variables block at the bottom. Find "Net Debt" or "Net Cash."
+Step 2: Pick the CORRECT path below. There is NO third option.
+
+PATH A — NET DEBT (Total Debt > Total Cash):
+  The company carries net debt. You MAY cite high D/E, leverage risk, debt burden,
+  interest coverage concerns. These are legitimate bear arguments. Use the verified
+  Total Debt and Net Debt figures — do NOT invent different numbers.
+  FORBIDDEN: understating the debt or claiming "manageable" without citing specific
+  coverage ratios from the verified data.
+
+PATH B — NET CASH (Total Cash > Total Debt):
+  The company has more cash than debt. D/E may be mathematically inflated by thin
+  equity from accumulated losses — this is a profitability concern, NOT a solvency
+  risk. You MUST NOT cite D/E as a leverage/debt risk.
+  FORBIDDEN phrases under Path B:
+  "high leverage," "alarming D/E," "financial distress," "debt burden," "precarious."
+  The ONLY permitted framing: "thin equity from accumulated operating losses."
+
+VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = ENTIRE ANALYSIS INVALID.
 
 EARNINGS GROWTH INTEGRITY RULE:
 If the bull analyst cites large earnings growth (>50% YoY) as evidence of improvement,

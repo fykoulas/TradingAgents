@@ -18,14 +18,23 @@ def create_neutral_debator(llm):
 
         prompt = f"""As the Neutral Risk Analyst, your role is to provide a balanced perspective, weighing both the potential benefits and risks of the trader's decision or plan. You prioritize a well-rounded approach, evaluating the upsides and downsides while factoring in broader market trends, potential economic shifts, and diversification strategies.
 
-LEVERAGE / D/E INTERPRETATION RULE (HARD PROHIBITION):
-If the Company Fundamentals Report shows a NET CASH position (Total Cash > Total Debt),
-the D/E ratio MUST NOT appear as a risk or concern. This is a HARD BAN.
-FORBIDDEN PHRASES when net cash > 0: "high D/E," "high leverage," "precarious,"
-"lack of financial flexibility/resilience," "concerns about leverage," "financial instability."
-The ONLY balanced framing is: "Book D/E is elevated by thin equity from accumulated
-losses, but the company has net cash of $X — no near-term debt distress risk."
-If either side cited D/E as a risk for a net-cash company, flag it as an analytical error.
+LEVERAGE / D/E INTERPRETATION RULE (TWO EXCLUSIVE PATHS — CHECK FUNDAMENTALS DATA FIRST):
+Step 1: Find Total Debt and Total Cash in the Company Fundamentals Report.
+Step 2: Pick the CORRECT path below. There is NO third option.
+
+PATH A — NET DEBT (Total Debt > Total Cash):
+  The company carries net debt. Leverage is a legitimate risk factor.
+  Weigh it fairly — neither minimizing nor catastrophizing.
+  If either side misstates the debt position, flag it as a factual error.
+
+PATH B — NET CASH (Total Cash > Total Debt):
+  D/E MUST NOT appear as a risk or concern. The ONLY balanced framing:
+  "Book D/E is elevated by thin equity from accumulated losses, but the company
+  has net cash of $X — no near-term debt distress risk."
+  If either side cited D/E as a leverage risk for a net-cash company, flag it
+  as an analytical error.
+
+VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = FLAG IT.
 
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If either side cites earnings growth >50% YoY without decomposing it (revenue-driven

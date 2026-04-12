@@ -23,15 +23,27 @@ def create_bull_researcher(llm, memory):
 
         prompt = f"""You are a Bull Analyst advocating for investing in the stock. Your task is to build a strong, evidence-based case emphasizing growth potential, competitive advantages, and positive market indicators. Leverage the provided research and data to address concerns and counter bearish arguments effectively.
 
-LEVERAGE / D/E INTERPRETATION RULE (HARD PROHIBITION):
-If the fundamentals report contains a DEBT DECOMPOSITION showing a NET CASH position
-(Total Cash > Total Debt), the D/E ratio MUST NOT appear as a risk factor ANYWHERE.
-FORBIDDEN PHRASES when net cash > 0: "high D/E," "high leverage," "alarming,"
-"precarious," "financial distress," "lack of financial flexibility/resilience."
-The company HAS MORE CASH THAN DEBT — cite the net cash position as proof of
-financial resilience. Counter any bear D/E argument by stating: "D/E of X is a
-mathematical artifact of thin equity from accumulated losses; the company has net
-cash of $Y, meaning it could repay ALL debt and still have cash remaining."
+LEVERAGE / D/E INTERPRETATION RULE (TWO EXCLUSIVE PATHS — CHECK VERIFIED DATA FIRST):
+Step 1: Read the golden variables block at the bottom. Find "Net Debt" or "Net Cash."
+Step 2: Pick the CORRECT path below. There is NO third option.
+
+PATH A — NET DEBT (Total Debt > Total Cash):
+  The company carries net debt. You MUST NOT claim it has a "net cash position,"
+  "more cash than debt," or that it "could repay all debt." These are FABRICATIONS.
+  If D/E is high, acknowledge leverage risk honestly. Do not minimize it.
+  You may argue the debt is manageable (coverage ratios, asset backing) but you
+  CANNOT invert reality. FORBIDDEN phrases under Path A:
+  "net cash," "cash exceeds debt," "repay all debt," "debt-free,"
+  "more cash than debt," "cash remaining after repaying debt."
+
+PATH B — NET CASH (Total Cash > Total Debt):
+  The company has more cash than debt. D/E may be mathematically inflated by thin
+  equity from accumulated losses — this is a profitability concern, not a solvency
+  risk. You may cite the net cash position as financial resilience.
+  FORBIDDEN phrases under Path B:
+  "high leverage," "alarming D/E," "financial distress," "precarious."
+
+VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = ENTIRE ANALYSIS INVALID.
 
 EARNINGS GROWTH INTEGRITY RULE:
 If you cite earnings growth >50% YoY as a positive signal, you MUST first check:

@@ -18,18 +18,24 @@ def create_conservative_debator(llm):
 
         prompt = f"""As the Conservative Risk Analyst, your primary objective is to protect assets, minimize volatility, and ensure steady, reliable growth. You prioritize stability, security, and risk mitigation, carefully assessing potential losses, economic downturns, and market volatility. When evaluating the trader's decision or plan, critically examine high-risk elements, pointing out where the decision may expose the firm to undue risk and where more cautious alternatives could secure long-term gains.
 
-LEVERAGE / D/E INTERPRETATION RULE (HARD PROHIBITION):
-If the Company Fundamentals Report contains a DEBT DECOMPOSITION table showing a NET CASH
-position (Total Cash > Total Debt), the D/E ratio MUST NOT appear as a risk, red flag,
-or concern ANYWHERE in your analysis. This is a HARD BAN — no exceptions.
-FORBIDDEN PHRASES when net cash > 0: "high D/E," "high leverage," "precarious,"
-"financial distress," "lack of financial flexibility," "lack of financial resilience,"
-"limited financial flexibility," "concerns about leverage," "financial instability."
-The company HAS MORE CASH THAN DEBT — it is NOT at risk of debt distress.
-The ONLY permitted conservative concern is: "thin equity cushion from accumulated
-operating losses eroding book value" — a profitability problem, NOT a leverage problem.
-If you write ANY sentence connecting D/E to risk/concern for a net-cash company,
-your analysis contains a CRITICAL ANALYTICAL ERROR.
+LEVERAGE / D/E INTERPRETATION RULE (TWO EXCLUSIVE PATHS — CHECK FUNDAMENTALS DATA FIRST):
+Step 1: Find Total Debt and Total Cash in the Company Fundamentals Report.
+Step 2: Pick the CORRECT path below. There is NO third option.
+
+PATH A — NET DEBT (Total Debt > Total Cash):
+  The company carries net debt. You MAY cite high D/E, leverage risk, debt burden,
+  interest coverage concerns. These are legitimate conservative arguments.
+  Use the verified figures — do NOT invent different numbers.
+
+PATH B — NET CASH (Total Cash > Total Debt):
+  The company has more cash than debt. D/E MUST NOT appear as a risk or concern.
+  FORBIDDEN phrases under Path B:
+  "high D/E," "high leverage," "precarious," "financial distress,"
+  "lack of financial flexibility," "concerns about leverage," "financial instability."
+  The ONLY permitted concern: "thin equity from accumulated operating losses" —
+  a profitability problem, NOT a leverage problem.
+
+VIOLATION OF PATH SELECTION = CRITICAL ANALYTICAL ERROR = ANALYSIS INVALID.
 
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If the bull/aggressive side cites large earnings growth (>50% YoY), challenge whether
