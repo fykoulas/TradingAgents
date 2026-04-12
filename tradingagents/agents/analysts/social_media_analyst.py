@@ -1,3 +1,4 @@
+from langchain_core.messages import ToolMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from tradingagents.agents.utils.agent_utils import build_instrument_context, get_language_instruction, get_news
 from tradingagents.dataflows.config import get_config
@@ -44,16 +45,24 @@ def create_social_media_analyst(llm):
 
         chain = prompt | llm.bind_tools(tools)
 
-        result = chain.invoke(state["messages"])
+        # Internal tool loop — runs tool calls locally for parallel execution
+        tool_map = {tool.name: tool for tool in tools}
+        local_messages = list(state["messages"])
 
-        report = ""
+        for _ in range(10):
+            result = chain.invoke(local_messages)
+            if not result.tool_calls:
+                return {"sentiment_report": result.content}
+            local_messages.append(result)
+            for tc in result.tool_calls:
+                try:
+                    tool_output = tool_map[tc["name"]].invoke(tc["args"])
+                except Exception as e:
+                    tool_output = f"Error: {e}"
+                local_messages.append(
+                    ToolMessage(content=str(tool_output), tool_call_id=tc["id"])
+                )
 
-        if len(result.tool_calls) == 0:
-            report = result.content
-
-        return {
-            "messages": [result],
-            "sentiment_report": report,
-        }
+        return {"sentiment_report": result.content or ""}
 
     return social_media_analyst_node

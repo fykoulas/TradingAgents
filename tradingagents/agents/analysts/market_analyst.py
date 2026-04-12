@@ -1,3 +1,4 @@
+from langchain_core.messages import ToolMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from tradingagents.agents.utils.agent_utils import (
     build_instrument_context,
@@ -82,16 +83,24 @@ Volume-Based Indicators:
 
         chain = prompt | llm.bind_tools(tools)
 
-        result = chain.invoke(state["messages"])
+        # Internal tool loop — runs tool calls locally for parallel execution
+        tool_map = {tool.name: tool for tool in tools}
+        local_messages = list(state["messages"])
 
-        report = ""
+        for _ in range(10):
+            result = chain.invoke(local_messages)
+            if not result.tool_calls:
+                return {"market_report": result.content}
+            local_messages.append(result)
+            for tc in result.tool_calls:
+                try:
+                    tool_output = tool_map[tc["name"]].invoke(tc["args"])
+                except Exception as e:
+                    tool_output = f"Error: {e}"
+                local_messages.append(
+                    ToolMessage(content=str(tool_output), tool_call_id=tc["id"])
+                )
 
-        if len(result.tool_calls) == 0:
-            report = result.content
-
-        return {
-            "messages": [result],
-            "market_report": report,
-        }
+        return {"market_report": result.content or ""}
 
     return market_analyst_node
