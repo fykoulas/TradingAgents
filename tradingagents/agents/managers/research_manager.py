@@ -57,6 +57,21 @@ A company with analyst coverage generates news. Zero results means the data sour
 
 ---
 
+**PRODUCT NAME & COMPETITIVE ATTRIBUTION AUDIT:**
+Scan all upstream reports for product names, drug names, or brand names. If a product name
+does not appear in the verified data or tool output, flag it: 'Product name [X] not verified
+in source data — potential fabrication.' If a competitive threat (e.g., generic drug competition)
+is attributed to this company but the threatened product is actually manufactured by a
+COMPETITOR, flag it as a misattribution error and disregard that conclusion.
+
+**CAPEX-ARTIFACT LEVERAGE CHECK:**
+If verified data flags '⚠ CAPEX-ARTIFACT LEVERAGE', ensure upstream analysts used
+Net Debt/OCF (not Net Debt/FCF) as the leverage metric. Any analyst who cited the
+FCF-based ratio as a solvency risk without decomposing capex has committed an analytical
+error — flag it and override with the OCF-based ratio.
+
+---
+
 **SECTOR-AWARE RATIO INTERPRETATION:**
 If the company is in Insurance, Banking, REITs, Restaurants/Franchisors, Utilities, or Consumer Staples/Tobacco, standard financial ratios (D/E, Current Ratio, P/E) are structurally different from industrial companies. Do NOT treat a high D/E at an insurer or bank as a red flag without acknowledging that policyholder reserves (insurance) or deposits (banking) inflate reported liabilities. Similarly, franchisors (QSR, MCD, YUM) routinely carry D/E of 3x-10x+ or negative equity — this is the standard franchise capital structure, not a crisis. If an analyst report flags D/E as 'alarming' or 'concerning' WITHOUT comparing to named sector peers, flag it as an analytical error in your evaluation.
 

@@ -50,6 +50,15 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION = FACTUAL FABRICATION = DECISION INVALID.
 
+CAPEX-ARTIFACT LEVERAGE:
+If the verified data flags '⚠ CAPEX-ARTIFACT LEVERAGE', use Net Debt/OCF (not
+Net Debt/FCF) for leverage assessment and kill criteria. The FCF-based ratio is
+distorted by peak capex. Do NOT set kill criteria based on the inflated ratio.
+
+PRODUCT & COMPETITIVE VERIFICATION:
+Do NOT cite product/drug names unless they appear in the source reports. Do NOT
+attribute competitive threats from a COMPETITOR's product to THIS company.
+
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If earnings growth >50% YoY: verify whether revenue grew proportionally. If not,
    earnings growth is cost-driven/one-time and should NOT anchor your thesis.

@@ -46,6 +46,11 @@ burn rate, (b) burn-rate trend (improving/worsening), (c) breakeven revenue dist
 (d) debt maturity vs runway. FORBIDDEN: calling total debt 'alarming' without
 computing these specific metrics. The conservative risk is CASH EXHAUSTION, not leverage.
 
+PRODUCT & COMPETITIVE VERIFICATION:
+Do NOT cite product/drug names unless they appear in the source reports. Do NOT
+attribute competitive threats from a COMPETITOR's product to THIS company. If verified
+data flags '⚠ CAPEX-ARTIFACT LEVERAGE', use Net Debt/OCF — not Net Debt/FCF.
+
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If the bull/aggressive side cites large earnings growth (>50% YoY), challenge whether
    it is sustainable — check revenue trajectory and prior-year one-time charges.

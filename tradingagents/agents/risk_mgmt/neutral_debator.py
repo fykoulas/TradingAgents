@@ -38,6 +38,11 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = FLAG IT.
 
+PRODUCT & COMPETITIVE VERIFICATION:
+Do NOT cite product/drug names unless they appear in the source reports. Do NOT
+attribute competitive threats from a COMPETITOR's product to THIS company. If verified
+data flags '⚠ CAPEX-ARTIFACT LEVERAGE', use Net Debt/OCF — not Net Debt/FCF.
+
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If either side cites earnings growth >50% YoY without decomposing it (revenue-driven
    vs cost-driven vs one-time), flag this as incomplete analysis.

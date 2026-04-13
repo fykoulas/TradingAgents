@@ -86,6 +86,18 @@ financial position. Do NOT invent, reinterpret, or contradict the verified data.
 If verified data shows Net Debt of $X, you CANNOT claim the company has a
 'net cash position.' Doing so is a FACTUAL FABRICATION.
 
+PRODUCT NAME & COMPETITIVE ATTRIBUTION (MANDATORY):
+Do NOT cite specific product names, drug names, or brand names unless they
+appear in the analyst reports or verified data provided to you. If a report
+mentions a product, verify which company ACTUALLY manufactures it before
+attributing competitive dynamics. Generic competition for a COMPETITOR's product
+is not a risk to THIS company. If you cannot verify ownership, state it.
+
+CAPEX-ARTIFACT LEVERAGE:
+If verified data flags '⚠ CAPEX-ARTIFACT LEVERAGE', use Net Debt/OCF (not
+Net Debt/FCF) as the leverage metric. The FCF-based ratio is distorted by
+peak capex and does NOT reflect debt-serviceability.
+
 Resources available:
 Market research report: {market_research_report}
 Social media sentiment report: {sentiment_report}

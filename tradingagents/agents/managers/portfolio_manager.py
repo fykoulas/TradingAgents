@@ -47,6 +47,14 @@ This is a hard gate — narrative strength cannot compensate for missing financi
 
 **QUANTITATIVE GUARDRAILS (hard rules — override narrative):**
 Before issuing any rating, evaluate these conditions against the verified data above:
+
+**PRODUCT & COMPETITIVE VERIFICATION:**
+If any upstream report cites a product or drug name, verify it appears in the source data.
+If a competitive threat is attributed to this company but the threatened product belongs to
+a competitor, flag it as a misattribution error and disregard that conclusion. If verified
+data flags '⚠ CAPEX-ARTIFACT LEVERAGE', use Net Debt/OCF — not Net Debt/FCF — for leverage
+assessments and kill criteria.
+
 1. **Trend Filter**: If price is >10% below the 200-day SMA, the stock is in a confirmed downtrend. A BUY rating requires EXPLICIT identification of a reversal catalyst (not just "long-term potential") and must be accompanied by a tight stop-loss. If no reversal signal exists, the maximum rating is HOLD.
 2. **Valuation Discipline**: If P/E (TTM) > 40 AND the stock is in a downtrend (per rule 1), a BUY is NOT permitted. High-multiple stocks in downtrends carry extreme risk of multiple compression.
 3. **Momentum Confirmation**: If RSI < 40 AND price is below both 50-day and 200-day SMA, the stock is in bearish momentum. BUY requires a confirmed reversal signal (RSI divergence, SMA crossover, or price reclaiming 50-SMA).
