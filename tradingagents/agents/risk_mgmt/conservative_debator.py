@@ -39,6 +39,17 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = CRITICAL ANALYTICAL ERROR = ANALYSIS INVALID.
 
+BANK OVERRIDE (PATH C — supersedes A and B for banks):
+If fundamentals data contains a '── Bank Valuation ──' golden block, the company is a BANK.
+D/E of 8-12x is the BUSINESS MODEL (deposits are liabilities) — not a conservative concern.
+Equity ratio of 8-12% is REGULATORY STRUCTURE (Basel III), not thin equity.
+Do NOT apply Path A or Path B logic. LEGITIMATE conservative bank risks:
+- NII sensitivity to rate cuts (100bp cut ≈ $1.5-2.5B NII headwind for large money-centres).
+- Credit quality deterioration (NPL ratio rising, provision builds).
+- CET1 capital adequacy under stress scenarios.
+- P/TBV premium vs peers if ROTCE deteriorates below Cost of Equity (~10%).
+FORBIDDEN: citing D/E, thin equity, or FCF-based metrics as risks for a bank.
+
 PRE-PROFITABILITY DEBT RULE:
 If the company has NEGATIVE earnings AND NEGATIVE FCF, D/E and total debt are the
 wrong framework. Frame debt risk through: (a) cash runway in years/months at current

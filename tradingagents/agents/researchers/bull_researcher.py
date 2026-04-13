@@ -50,6 +50,18 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = ENTIRE ANALYSIS INVALID.
 
+BANK OVERRIDE (PATH C — supersedes A and B for banks):
+If verified data contains a '── Bank Valuation ──' golden block, the company is a BANK.
+D/E of 8-12x is the BUSINESS MODEL (deposits are liabilities) — neither alarming nor a strength.
+Equity ratio of 8-12% is REGULATORY STRUCTURE (Basel III), not thin equity.
+Do NOT apply Path A or Path B logic. Instead:
+- Cite P/B, P/TBV, ROTCE vs CoE (~10%) as PRIMARY valuation metrics.
+- FCF Yield, Growth Gap, Implied FCF Growth are UNRELIABLE for banks. Do not use them.
+- ROTCE > CoE = value creation. Frame ROTCE of 14-15% as strong (~5pp above CoE).
+- P/TBV peer benchmarks: JPM ~2.5x, WFC ~1.5x, C ~0.7x.
+- NII (Net Interest Income) is the core earnings driver. Use the NII trajectory and
+  rate sensitivity from the golden block. Bull case: NII resilience despite rate cuts.
+
 EARNINGS GROWTH INTEGRITY RULE:
 If you cite earnings growth >50% YoY as a positive signal, you MUST first check:
 (a) Did revenue grow proportionally? If revenue declined or was flat, earnings growth

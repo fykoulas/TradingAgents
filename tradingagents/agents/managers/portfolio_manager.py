@@ -105,6 +105,15 @@ assessments and kill criteria.
    - The correct risk for thin-equity companies is 'minimal book equity cushion from
      accumulated losses' — a profitability problem, not a debt problem.
    - If any analyst confused thin equity with extreme debt, flag and correct the framing.
+   - **BANK EXCEPTION**: If verified data contains a '── Bank Valuation ──' golden block,
+     the company is a BANK. Bank equity ratios of 8-12% are STRUCTURAL (Basel III regulation),
+     not thin-equity. Do NOT apply thin-equity analysis. Use CET1 capital ratio instead.
+     D/E of 8-12x is the banking business model (deposits are liabilities). If any analyst
+     cited D/E or thin equity as a risk for a bank, that conclusion is INVALID — discard it.
+     PRIMARY bank metrics: P/B, P/TBV, ROTCE vs CoE (~10%), NII trajectory, NIM, Dividend Yield.
+     If any analyst used FCF Yield, Growth Gap, or FCF-based DCF for a bank, their valuation
+     is UNRELIABLE — reweight toward analysts that used P/TBV and ROTCE.
+     NII rate sensitivity: a 100bp rate cut ≈ $1.5-2.5B NII headwind for large money-centres.
 
 8c. **Revenue Growth Consistency**: If the verified data includes REVENUE TREND PROVENANCE:
    - Any revenue CAGR cited in the report that does not match the verified CAGRs is

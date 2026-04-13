@@ -39,6 +39,17 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = ENTIRE ANALYSIS INVALID.
 
+BANK OVERRIDE (PATH C — supersedes A and B for banks):
+If fundamentals data contains a '── Bank Valuation ──' golden block, the company is a BANK.
+D/E of 8-12x is the BUSINESS MODEL (deposits are liabilities) — neither alarming nor a strength.
+Equity ratio of 8-12% is REGULATORY STRUCTURE (Basel III), not thin equity.
+Do NOT apply Path A or Path B logic. AGGRESSIVE bull arguments for banks:
+- ROTCE > CoE (~10%) = value creation. Frame 14-15% ROTCE as strong (~5pp above CoE).
+- P/TBV discount vs JPM (~2.5x) as upside potential.
+- NII resilience and balance sheet diversification.
+- Dividend yield and capital return capacity.
+FORBIDDEN: citing D/E, thin equity, or FCF-based metrics as bank arguments.
+
 PRODUCT & COMPETITIVE VERIFICATION:
 Do NOT cite product/drug names unless they appear in the source reports. Do NOT
 attribute competitive threats from a COMPETITOR's product to THIS company. If verified

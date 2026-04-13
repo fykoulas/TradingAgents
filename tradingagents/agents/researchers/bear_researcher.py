@@ -47,6 +47,18 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = ENTIRE ANALYSIS INVALID.
 
+BANK OVERRIDE (PATH C — supersedes A and B for banks):
+If verified data contains a '── Bank Valuation ──' golden block, the company is a BANK.
+D/E of 8-12x is the BUSINESS MODEL (deposits are liabilities) — not a risk factor.
+Equity ratio of 8-12% is REGULATORY STRUCTURE (Basel III), not thin equity.
+Do NOT apply Path A or Path B logic. Instead:
+- Cite P/B, P/TBV, ROTCE vs CoE (~10%) as PRIMARY valuation metrics.
+- FCF Yield, Growth Gap, Implied FCF Growth are UNRELIABLE for banks. Do not use them.
+- BEAR RISKS for banks: NII sensitivity to rate cuts (100bp cut ≈ $1.5-2.5B NII
+  headwind for large money-centres), credit quality deterioration (NPL ratio rises),
+  CET1 capital adequacy under stress, P/TBV premium vs peers if ROTCE deteriorates.
+- Do NOT cite D/E, thin equity, or FCF-based metrics as bear arguments for a bank.
+
 PRE-PROFITABILITY DEBT RULE:
 If the verified data flags '⚠ PRE-PROFITABILITY DEBT CONTEXT', the D/E framework
 is the WRONG lens. You MAY cite debt as a risk, but ONLY through this framework:

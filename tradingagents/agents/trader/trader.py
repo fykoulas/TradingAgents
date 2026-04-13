@@ -50,6 +50,15 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION = FACTUAL FABRICATION = DECISION INVALID.
 
+BANK OVERRIDE (PATH C — supersedes A and B for banks):
+If fundamentals data contains a '── Bank Valuation ──' golden block, the company is a BANK.
+D/E of 8-12x is the BUSINESS MODEL (deposits are liabilities). Ignore it entirely.
+Equity ratio of 8-12% is REGULATORY STRUCTURE (Basel III), not thin equity.
+PRIMARY bank metrics for your decision: P/B, P/TBV, ROTCE vs CoE (~10%), NII, NIM, Dividend Yield.
+FCF-based metrics (FCF Yield, Growth Gap) are UNRELIABLE for banks — do not use them.
+Key bank risks to weigh: NII sensitivity to rate cuts, credit quality, CET1 adequacy.
+P/TBV peer benchmarks: JPM ~2.5x, WFC ~1.5x, C ~0.7x.
+
 CAPEX-ARTIFACT LEVERAGE:
 If the verified data flags '⚠ CAPEX-ARTIFACT LEVERAGE', use Net Debt/OCF (not
 Net Debt/FCF) for leverage assessment and kill criteria. The FCF-based ratio is

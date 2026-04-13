@@ -38,6 +38,16 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = FLAG IT.
 
+BANK OVERRIDE (PATH C — supersedes A and B for banks):
+If fundamentals data contains a '── Bank Valuation ──' golden block, the company is a BANK.
+D/E of 8-12x is the BUSINESS MODEL (deposits are liabilities). Equity ratio of 8-12% is
+REGULATORY STRUCTURE (Basel III), not thin equity. If either side cited D/E or thin equity
+as a risk/concern for a bank, flag it as an ANALYTICAL ERROR.
+Bank valuation anchors: P/B, P/TBV vs ROTCE, NII trajectory, NIM, Dividend Yield.
+FCF-based metrics (FCF Yield, Growth Gap) are UNRELIABLE for banks — flag if cited.
+NII RATE SENSITIVITY: 100bp rate cut ≈ $1.5-2.5B NII headwind for large money-centres.
+Weigh bull (ROTCE strength, P/TBV discount) against bear (NII rate risk, credit quality).
+
 PRODUCT & COMPETITIVE VERIFICATION:
 Do NOT cite product/drug names unless they appear in the source reports. Do NOT
 attribute competitive threats from a COMPETITOR's product to THIS company. If verified

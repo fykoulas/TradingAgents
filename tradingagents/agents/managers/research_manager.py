@@ -81,6 +81,17 @@ If verified data includes a '── SECTOR METRIC FRAMEWORK ──' block, it de
 - Verify that at least one analyst anchored valuation on a PRIMARY metric. If none did, flag it as an analytical gap.
 - Use the recommended VALUATION MODEL as your arbitration baseline when analysts disagree.
 
+**BANK VALUATION OVERRIDE:**
+If verified data contains a '── Bank Valuation ──' golden block, the company is a BANK.
+- PRIMARY METRICS: P/B, P/TBV, ROTCE vs Cost of Equity (~10%), NII trajectory, NIM, Dividend Yield.
+- FCF-based metrics (FCF Yield, Growth Gap, Implied FCF Growth) are UNRELIABLE for banks — deposit flows and loan originations dominate cash flow. If any analyst used FCF-based DCF, flag as METHODOLOGICAL ERROR.
+- ROTCE > CoE (10%) = value creation. ROTCE of 14-15% is ~5pp above CoE — strong.
+- P/TBV peer benchmarks: JPM ~2.5x, WFC ~1.5x, C ~0.7x. Compare the subject bank to these.
+- D/E of 8-12x is the BUSINESS MODEL (deposits are liabilities), not a risk factor.
+- Equity ratio of 8-12% is REGULATORY STRUCTURE (Basel III CET1), not thin equity.
+- NII RATE SENSITIVITY: 100bp rate cut ≈ $1.5-2.5B NII headwind for large money-centres. If the golden block quantifies NII sensitivity, incorporate into your growth assessment.
+- Growth Gap Executive Highlight: For banks, the Growth Gap is based on FCF and is therefore UNRELIABLE. Use P/TBV vs ROTCE for valuation assessment instead.
+
 ---
 
 **D/E DECOMPOSITION CHECK (MANDATORY — applies to ALL sectors):**
