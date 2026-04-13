@@ -64,6 +64,18 @@ assessments and kill criteria.
    - If the quant's Growth Gap shows the market prices in perpetual growth exceeding the company's structural Revenue CAGR, Buy requires identifying WHY future growth will exceed the past.
    - If you cannot identify a specific catalyst beyond ‘strong momentum’ or ‘sector tailwinds’, the maximum rating is Hold.
 5. **If any guardrail blocks a BUY**, you MUST downgrade to HOLD or lower and state which guardrail was triggered.
+5b. **PEG Ratio Check**: If the quant scorecard includes a PEG ratio that is not N/A:
+   - PEG < 0.75: This is a SIGNIFICANT bullish signal — growth is substantially underpriced
+     relative to earnings growth rate. If NO upstream report mentions PEG in its narrative,
+     YOU must flag it: 'PEG of [X] indicates growth is underpriced — not discussed by
+     upstream analysts.' A PEG < 0.75 combined with peer premium multiples suggests the
+     premium may be JUSTIFIED by superior growth.
+   - PEG 0.75-1.0: Growth moderately underpriced. Note it as supporting a BUY/HOLD case.
+   - PEG 1.0-1.5: Fairly priced for growth. Neutral signal.
+   - PEG > 2.0: Growth overpriced. Supports a HOLD/SELL case.
+   PEG is the single most direct measure of whether you're overpaying for growth. If the
+   quant's PEG assessment flagged it as significant and no narrative section discussed it,
+   that is an analytical gap you must fill.
 6. **Peer Valuation**: If the target trades at a >20% premium to peer median P/E or EV/EBITDA
    (from the analyst reports), a BUY requires explicit justification for the premium.
    'Strong growth' or 'market leader' is insufficient — you must cite specific metrics

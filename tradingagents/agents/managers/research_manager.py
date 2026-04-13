@@ -454,6 +454,19 @@ If you cannot satisfy (a)-(d), you MUST align with the upstream consensus.
 
 ---
 
+**PEG RATIO AUDIT (MANDATORY):**
+Check the Quant Scorecard's Valuation table for a PEG ratio. If PEG is present and not N/A:
+- If PEG < 1.0 and NO upstream report discussed PEG in narrative text, flag this as an
+  analytical gap: 'PEG of [X] — growth underpriced — not discussed by any analyst.'
+- If PEG < 0.75, this is a SIGNIFICANT bullish quantitative signal. It must appear in your
+  recommendation rationale. A PEG < 0.75 means the market prices significantly less growth
+  than analyst consensus expects — the stock may be undervalued on a growth-adjusted basis
+  even if raw P/E or EV/EBITDA appear elevated.
+- PEG is especially relevant when Growth Gap is N/A (hypergrowth) — PEG uses forward EPS
+  estimates (not reverse DCF), so it remains valid when the Growth Gap framework breaks down.
+
+---
+
 **GROWTH GAP EXECUTIVE HIGHLIGHT (MANDATORY):**
 Extract the Growth Gap from the Quant Scorecard's Implied Expectations section.
 This metric (Implied FCF Growth − Revenue CAGR) measures how much perpetual growth the
@@ -479,6 +492,23 @@ If the reason is HYPERGROWTH CAGR: state 'Growth Gap: N/A — Revenue CAGR (X%) 
 hypergrowth (not perpetual-equivalent). Valuation assessed via EV/Revenue and steady-state
 growth projection.' Do NOT cite a massive negative gap as 'UNDERPRICED' — it is a
 category error, not a valuation signal.
+CRITICAL — DIRECTIONAL INTERPRETATION FOR HYPERGROWTH:
+When Growth Gap is N/A (hypergrowth), both numbers are still visible (Implied FCF Growth
+and Revenue CAGR). Check the quant scorecard's 'Implied growth assessment' or the
+verified data's '⚠ GROWTH GAP DIRECTION' note.
+If Implied FCF Growth < Revenue CAGR: the market prices LESS perpetual growth than
+the company has delivered — the market is being CONSERVATIVE, NOT aggressive.
+Do NOT write 'overly optimistic' or 'not sustainable' as your interpretation.
+The correct interpretation is: 'Market prices X% perpetual growth for a company
+growing at Y% — pricing appears conservative relative to near-term trajectory.'
+If Implied FCF Growth > Revenue CAGR: the opposite — market is aggressive.
+DCF RECONCILIATION CONSISTENCY:
+When DCF Reconciliation is N/A (hypergrowth or negative FCF), the Interpretation
+line MUST NOT make claims about market implied growth rate sustainability. Those
+claims require a valid DCF as foundation. Write: 'DCF Reconciliation: N/A —
+[reason]. No DCF-based sustainability assessment applicable.' Do NOT follow
+'DCF Reconciliation: N/A' with an interpretation about whether the market's implied
+growth rate is sustainable — that is a logical contradiction.
 If the reason is BASE-EFFECT CAGR: state 'Growth Gap: N/A — Revenue CAGR is base-effect-
 inflated (pre-commercial → commercial launch). Correct growth metric: QoQ ramp of [rate]%.'
 Do NOT cite the multi-year CAGR as evidence of growth momentum.
