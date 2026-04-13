@@ -255,6 +255,16 @@ negative. In this case:
   [EV/Revenue / revenue trajectory / pipeline NPV].'
 - Skip the reconciliation rules below and proceed to the FCF Reliability Check.
 
+**HYPERGROWTH CAGR OVERRIDE**: If the verified data shows Growth Gap = N/A due to
+'hypergrowth' Revenue CAGR (>30%), the Growth Gap framework is INAPPLICABLE — a near-term
+product-launch CAGR is not a perpetual-equivalent rate. Comparing it to perpetual implied
+FCF growth is a category error that falsely labels any stock as 'UNDERPRICED'. In this case:
+- Do NOT cite Growth Gap as evidence of underpricing or growth-cheapness.
+- State: 'Growth Gap: N/A (Revenue CAGR X% is hypergrowth — not a perpetual rate).'
+- Assess valuation via EV/Revenue, revenue trajectory, and what steady-state growth
+  rate the company can sustain once matured.
+- Skip the reconciliation rules below and proceed to the FCF Reliability Check.
+
 The Growth Gap (from the quant) and the DCF fair value (from the fundamentals analyst) both
 measure whether the stock is over/underpriced, but using different methodologies. They MUST
 point in the same direction. If they contradict, you MUST resolve the conflict explicitly.
@@ -406,6 +416,10 @@ If the quant could not compute a Growth Gap (N/A), state that and note the limit
 If the reason is NEGATIVE FCF: state 'Growth Gap: N/A — FCF is negative; reverse DCF
 framework invalid. Valuation assessed via [EV/Revenue / revenue trajectory].' and show
 the EV/Revenue multiple and cash runway instead of Growth Gap metrics.
+If the reason is HYPERGROWTH CAGR: state 'Growth Gap: N/A — Revenue CAGR (X%) is
+hypergrowth (not perpetual-equivalent). Valuation assessed via EV/Revenue and steady-state
+growth projection.' Do NOT cite a massive negative gap as 'UNDERPRICED' — it is a
+category error, not a valuation signal.
 
 ---
 
