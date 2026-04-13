@@ -277,6 +277,21 @@ transition (e.g., first drug launch), NOT organic business growth. In this case:
   [most recent QoQ rate] QoQ.'
 - Skip the reconciliation rules below and proceed to the FCF Reliability Check.
 
+**PROFITABILITY INFLECTION OVERRIDE**: If the verified data flags '⚠ PROFITABILITY
+INFLECTION', the company is crossing from GAAP losses to first profitability (trailing
+EPS negative → forward EPS positive). In this case:
+- P/E TTM, Forward P/E, and Forward EPS Growth are ALL structurally meaningless — they
+  capture an accounting sign change, not market expectations of perpetual earnings growth.
+- If ANY analyst (bull or bear) cites the forward P/E as evidence of overvaluation (e.g.,
+  '283x forward P/E is extreme'), flag as ANALYTICAL ERROR: 'Forward P/E at profitability
+  inflection captures a sign change, not valuation. Use EV/Revenue.'
+- If any analyst uses sector-median P/E comparison for a company at profitability inflection,
+  flag as ANALYTICAL ERROR: 'P/E comparison is invalid at break-even transition.'
+- The correct valuation metrics are: EV/Revenue (from verified data), EV/Revenue relative
+  to forward revenue estimates, and EV/Revenue relative to peak sales potential.
+- Verify the fundamentals analyst used a revenue-based valuation approach (EV/Revenue exit
+  multiple, revenue trajectory DCF), NOT an earnings-based DCF with near-zero earnings.
+
 The Growth Gap (from the quant) and the DCF fair value (from the fundamentals analyst) both
 measure whether the stock is over/underpriced, but using different methodologies. They MUST
 point in the same direction. If they contradict, you MUST resolve the conflict explicitly.

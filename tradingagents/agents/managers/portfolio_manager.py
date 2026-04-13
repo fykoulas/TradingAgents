@@ -126,6 +126,12 @@ Before issuing any rating, evaluate these conditions against the verified data a
    - For turnaround stocks (trailing EPS negative → forward EPS positive), the relevant
      question is NOT 'what P/E is appropriate' but 'will the turnaround happen?' If the
      reports fail to address this, the thesis is INCOMPLETE — maximum rating is Hold.
+   - **PROFITABILITY INFLECTION**: If the verified data flags '⚠ PROFITABILITY INFLECTION',
+     the forward P/E captures an accounting sign change, NOT a valuation signal. If any
+     report cites a >100x forward P/E as evidence of overvaluation at this transition,
+     that is an ANALYTICAL ERROR. Valuation should be assessed via EV/Revenue and revenue
+     trajectory, not P/E multiples. If no report uses EV/Revenue-based valuation,
+     the analysis is INCOMPLETE — maximum rating is Hold.
 
 ---
 
