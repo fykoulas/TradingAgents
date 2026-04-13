@@ -87,6 +87,17 @@ If the Equity Ratio (Equity/Assets) is <10%:
    from debt, regardless of what D/E shows.
 5. Check that the fundamentals analyst included the debt decomposition table. If missing,
    note it as a gap.
+6. PRE-PROFITABILITY DEBT: If verified data flags '⚠ PRE-PROFITABILITY DEBT CONTEXT',
+   the company has negative earnings/FCF. The ENTIRE D/E decomposition is secondary — the
+   relevant analysis is:
+   (a) Cash runway at current burn rate (from verified data)
+   (b) Burn-rate trajectory (IMPROVING / WORSENING / MIXED from verified data)
+   (c) Breakeven revenue estimate — at what revenue does FCF turn positive?
+   (d) Debt type (convertible vs term) and maturity vs cash runway
+   If any analyst (bull or bear) simply calls the total debt 'alarming' or 'manageable'
+   WITHOUT computing cash runway, burn trajectory, and breakeven revenue, flag as
+   ANALYTICAL ERROR: 'Debt framed via D/E ratio, but company is pre-profitability.
+   Correct framework: cash runway X years, burn trend [trend], breakeven at $XM revenue.'
 
 ---
 

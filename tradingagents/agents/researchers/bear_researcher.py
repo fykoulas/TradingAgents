@@ -47,6 +47,17 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = FACTUAL FABRICATION = ENTIRE ANALYSIS INVALID.
 
+PRE-PROFITABILITY DEBT RULE:
+If the verified data flags '⚠ PRE-PROFITABILITY DEBT CONTEXT', the D/E framework
+is the WRONG lens. You MAY cite debt as a risk, but ONLY through this framework:
+(a) Cash runway: how many years/months of cash remain at current burn rate?
+(b) Burn-rate trend: is the burn narrowing (improving) or widening (worsening)?
+(c) Breakeven distance: at what revenue level does FCF turn positive?
+(d) Debt maturity vs runway: does debt mature before or after projected breakeven?
+(e) Debt type: convertible notes vs term debt (different risk profiles).
+FORBIDDEN: labelling total debt as 'alarming' or using D/E ratio for a pre-profit
+company. The bear case is about CASH EXHAUSTION RISK, not leverage ratios.
+
 EARNINGS GROWTH INTEGRITY RULE:
 If the bull analyst cites large earnings growth (>50% YoY) as evidence of improvement,
 challenge it: (a) check whether revenue grew proportionally — if not, earnings growth is

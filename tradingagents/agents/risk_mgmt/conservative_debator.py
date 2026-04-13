@@ -39,6 +39,13 @@ PATH B — NET CASH (Total Cash > Total Debt):
 
 VIOLATION OF PATH SELECTION = CRITICAL ANALYTICAL ERROR = ANALYSIS INVALID.
 
+PRE-PROFITABILITY DEBT RULE:
+If the company has NEGATIVE earnings AND NEGATIVE FCF, D/E and total debt are the
+wrong framework. Frame debt risk through: (a) cash runway in years/months at current
+burn rate, (b) burn-rate trend (improving/worsening), (c) breakeven revenue distance,
+(d) debt maturity vs runway. FORBIDDEN: calling total debt 'alarming' without
+computing these specific metrics. The conservative risk is CASH EXHAUSTION, not leverage.
+
 EARNINGS & REVENUE INTEGRITY RULES:
 1. If the bull/aggressive side cites large earnings growth (>50% YoY), challenge whether
    it is sustainable — check revenue trajectory and prior-year one-time charges.
