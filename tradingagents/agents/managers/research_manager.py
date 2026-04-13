@@ -265,6 +265,18 @@ FCF growth is a category error that falsely labels any stock as 'UNDERPRICED'. I
   rate the company can sustain once matured.
 - Skip the reconciliation rules below and proceed to the FCF Reliability Check.
 
+**BASE-EFFECT CAGR OVERRIDE**: If the verified data flags 'BASE-EFFECT CAGR' or
+'revenue_cagr_base_effect', the multi-year CAGR reflects a pre-commercial-to-commercial
+transition (e.g., first drug launch), NOT organic business growth. In this case:
+- Multi-year revenue CAGRs are MEANINGLESS as growth indicators — do NOT cite them.
+- The correct growth metric is the quarterly sequential ramp (QoQ rates from verified data).
+- If any analyst (bull or bear) cites the multi-year CAGR without acknowledging the base
+  effect, flag as ANALYTICAL ERROR: 'CAGR of X% is base-effect-inflated from pre-commercial
+  revenue. Correct metric: QoQ ramp of Y%.'
+- State: 'Growth Gap: N/A (base-effect CAGR from pre-commercial launch). Revenue ramp:
+  [most recent QoQ rate] QoQ.'
+- Skip the reconciliation rules below and proceed to the FCF Reliability Check.
+
 The Growth Gap (from the quant) and the DCF fair value (from the fundamentals analyst) both
 measure whether the stock is over/underpriced, but using different methodologies. They MUST
 point in the same direction. If they contradict, you MUST resolve the conflict explicitly.
@@ -420,6 +432,9 @@ If the reason is HYPERGROWTH CAGR: state 'Growth Gap: N/A — Revenue CAGR (X%) 
 hypergrowth (not perpetual-equivalent). Valuation assessed via EV/Revenue and steady-state
 growth projection.' Do NOT cite a massive negative gap as 'UNDERPRICED' — it is a
 category error, not a valuation signal.
+If the reason is BASE-EFFECT CAGR: state 'Growth Gap: N/A — Revenue CAGR is base-effect-
+inflated (pre-commercial → commercial launch). Correct growth metric: QoQ ramp of [rate]%.'
+Do NOT cite the multi-year CAGR as evidence of growth momentum.
 
 ---
 
