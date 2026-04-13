@@ -132,6 +132,11 @@ Before issuing any rating, evaluate these conditions against the verified data a
      that is an ANALYTICAL ERROR. Valuation should be assessed via EV/Revenue and revenue
      trajectory, not P/E multiples. If no report uses EV/Revenue-based valuation,
      the analysis is INCOMPLETE — maximum rating is Hold.
+   - **SECTOR METRIC FRAMEWORK**: If the verified data includes a '── SECTOR METRIC FRAMEWORK ──'
+     block, check that upstream analysts used the PRIMARY metrics for valuation and did NOT cite
+     DISQUALIFIED metrics as risk factors. If an analyst used a disqualified metric (e.g., P/E for
+     a REIT, D/E for insurance) as a key valuation or risk input without the sector context,
+     their conclusion is unreliable — reweight toward analysts that used sector-appropriate metrics.
 
 ---
 

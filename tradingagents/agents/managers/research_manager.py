@@ -60,6 +60,12 @@ A company with analyst coverage generates news. Zero results means the data sour
 **SECTOR-AWARE RATIO INTERPRETATION:**
 If the company is in Insurance, Banking, REITs, Restaurants/Franchisors, Utilities, or Consumer Staples/Tobacco, standard financial ratios (D/E, Current Ratio, P/E) are structurally different from industrial companies. Do NOT treat a high D/E at an insurer or bank as a red flag without acknowledging that policyholder reserves (insurance) or deposits (banking) inflate reported liabilities. Similarly, franchisors (QSR, MCD, YUM) routinely carry D/E of 3x-10x+ or negative equity — this is the standard franchise capital structure, not a crisis. If an analyst report flags D/E as 'alarming' or 'concerning' WITHOUT comparing to named sector peers, flag it as an analytical error in your evaluation.
 
+**SECTOR METRIC FRAMEWORK OVERRIDE:**
+If verified data includes a '── SECTOR METRIC FRAMEWORK ──' block, it defines PRIMARY, SECONDARY, and DISQUALIFIED metrics for this sector. When evaluating analyst reports:
+- Flag any analyst that uses a DISQUALIFIED metric as a primary risk or valuation driver without sector context — that conclusion is unreliable.
+- Verify that at least one analyst anchored valuation on a PRIMARY metric. If none did, flag it as an analytical gap.
+- Use the recommended VALUATION MODEL as your arbitration baseline when analysts disagree.
+
 ---
 
 **D/E DECOMPOSITION CHECK (MANDATORY — applies to ALL sectors):**
