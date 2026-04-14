@@ -108,8 +108,10 @@ def create_social_media_analyst(llm):
                     "system",
                     "You are a helpful AI assistant, collaborating with other assistants."
                     " {mode_instruction}"
-                    " If you or any other assistant has the FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** or deliverable,"
-                    " prefix your response with FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** so the team knows to stop."
+                    " Do NOT output any BUY/SELL/HOLD recommendation or FINAL TRANSACTION PROPOSAL."
+                    " Your role is to provide ANALYSIS ONLY — all trading decisions are made by code."
+                    " At the END of your report, include a ```json assessment envelope with these exact fields:"
+                    ' {{"sentiment": "BULLISH or BEARISH or NEUTRAL", "confidence": "HIGH or MEDIUM or LOW", "data_gaps": []}}'
                     "\n{system_message}"
                     "\n\nCRITICAL — TODAY'S TRADING DATE IS {current_date}."
                     " All dates in your report MUST reference this exact date (year, month, day)."

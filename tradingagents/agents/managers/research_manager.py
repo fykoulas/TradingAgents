@@ -413,36 +413,22 @@ Scan the analyst reports for any stop-loss recommendations. Flag:
 **MANDATORY — Dissent Section (do this FIRST, before your recommendation):**
 Before stating your recommendation, you MUST complete this structured dissent analysis:
 
-1. **Upstream Signal Tally (count FIRST)**:
-   Search each analyst report for the exact string 'FINAL TRANSACTION PROPOSAL:'
-   followed by **BUY**, **HOLD**, or **SELL**. Copy that verdict into the table below.
-   | Source | Final Transaction Proposal |
-   |--------|--------------------------|
-   | Market Analysis | (extract from Market report) |
-   | News Analyst | (extract from News report) |
-   | Sentiment Analyst | (extract from Sentiment report) |
-   | Fundamentals Analyst | (extract from Fundamentals report) |
-   | Quant Scorecard | (extract from Quant Scorecard — provided separately below) |
-   State the tally: 'Upstream consensus: X SELL, Y HOLD, Z BUY (out of 5 analyst votes).'
-   ARITHMETIC CHECK: Verify X + Y + Z = 5. If it does not, you dropped a vote —
-   go back to the table, re-read every row, and recount. Do NOT proceed until the
-   sum is exactly 5.
-   TALLY→PROSE CONSISTENCY: After writing the tally sentence, re-read it and compare
-   each number against the table above. Every analyst in the table must appear in the
-   tally. Name each analyst's vote in parentheses:
-   Example: 'Upstream consensus: 2 SELL (News, Sentiment), 1 HOLD (Market), 2 BUY
-   (Fundamentals, Quant) — 5 of 5 votes counted.'
-   COUNTING RULES (HARD — NO EXCEPTIONS):
-   • ALL FIVE rows above are VOTES. The tally must sum to exactly 5.
-   • Each vote is the analyst's OWN stated verdict — the line containing
-     'FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL**' in their report.
-   • The Bull Thesis and Bear Thesis are DEBATE ARGUMENTS, not votes.
-     A 'strong bull case' is NOT a BUY vote. A 'strong bear case' is NOT a SELL vote.
-     Do NOT count thesis strength as a directional signal in the tally.
-   • If you cannot find an explicit verdict from an analyst, count it as HOLD.
-   • The tally constrains your recommendation — see Override Rules below.
+1. **Upstream Assessment Tally (read JSON envelopes FIRST)**:
+   Each analyst report ends with a ```json assessment envelope. Extract each
+   analyst's structured assessment from the JSON envelope at the end of their report.
+   Summarise assessments in this table:
+   | Source | Key Assessment |
+   |--------|---------------|
+   | Market Analysis | (trend field from JSON envelope) |
+   | News Analyst | (news_impact field from JSON envelope) |
+   | Sentiment Analyst | (sentiment field from JSON envelope) |
+   | Fundamentals Analyst | (valuation, growth_quality, financial_health from JSON envelope) |
+   | Quant Scorecard | (technical_outlook, valuation_outlook from JSON envelope) |
+   State the summary: 'Upstream assessments: X BULLISH/POSITIVE, Y NEUTRAL, Z BEARISH/NEGATIVE.'
+   NOTE: These are ASSESSMENTS, not trading decisions. The BUY/SELL/HOLD decision is made
+   by code after your analysis. Your role is to synthesise the qualitative picture.
 
-   **Thesis Context (for qualitative weighting only — NOT counted in the tally):**
+   **Thesis Context (for qualitative weighting only):**
    | Debate Side | Conviction |
    |-------------|------------|
    | Bull Thesis | strong / moderate / weak |
@@ -453,8 +439,8 @@ Before stating your recommendation, you MUST complete this structured dissent an
 4. **Confidence qualifier**: Rate your confidence as HIGH (>80% the debate evidence clearly favours one side), MEDIUM (60-80% evidence is mixed but leans), or LOW (<60% evidence is genuinely ambiguous). If LOW, your recommendation MUST be Hold.
 
 **CONSENSUS OVERRIDE RULES:**
-If ≥3 upstream signals agree on a direction (e.g., 3+ SELL), you MUST NOT override that
-consensus with a contrary recommendation unless ALL of the following are met:
+If ≥3 upstream assessments lean the same direction (e.g., 3+ BEARISH), you MUST NOT
+recommend the opposite direction unless ALL of the following are met:
 a) You cite a specific, quantified fair value and compute the risk/reward from current price.
 b) You identify a concrete catalyst with a timeline (not speculative language like 'could
    improve,' 'might stabilize,' 'potential partnerships').

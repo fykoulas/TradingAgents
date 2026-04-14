@@ -188,14 +188,16 @@ assessments and kill criteria.
 
 ---
 
-11. **Consensus Override Protocol**: Before issuing your rating, you MUST tally the directional
-   signals from ALL upstream inputs:
-   - Quant Scorecard verdict (Buy/Hold/Sell)
-   - Market Analysis recommendation
-   - Research Manager recommendation
-   - Bull thesis conclusion vs Bear thesis conclusion (which side was stronger?)
-   - Trader's proposed action
-   State the tally explicitly: 'Upstream consensus: X SELL, Y HOLD, Z BUY.'
+11. **Upstream Assessment Review**: Before issuing your rating, review the JSON assessment
+   envelopes at the end of each analyst report. Summarise the directional leanings:
+   - Market Analyst trend (BULLISH/BEARISH/NEUTRAL)
+   - Sentiment assessment (BULLISH/BEARISH/NEUTRAL)
+   - News impact (POSITIVE/NEGATIVE/NEUTRAL)
+   - Fundamentals valuation, growth, health
+   - Quant technical/valuation outlook
+   State: 'Upstream assessments: X lean bullish, Y neutral, Z lean bearish.'
+   NOTE: These are analyst ASSESSMENTS. The actual BUY/SELL/HOLD signal is computed by code.
+   Your rating is advisory — express your independent judgment.
 
    **If you DISAGREE with a ≥3-signal consensus**, the following are MANDATORY:
    a) **Quantified fair value**: State a specific dollar figure for your base-case intrinsic
@@ -240,6 +242,12 @@ assessments and kill criteria.
 - **Hold**: Maintain current position, no action needed
 - **Underweight**: Reduce exposure, take partial profits
 - **Sell**: Exit position or avoid entry
+
+NOTE: Your rating is advisory. The actual BUY/SELL/HOLD trading signal is derived by code
+from the structured analyst assessments. Your analysis informs the human reviewer.
+
+At the END of your report, include a ```json assessment envelope:
+{{"risk_reward": "FAVORABLE or NEUTRAL or UNFAVORABLE", "conviction_level": "HIGH or MEDIUM or LOW", "data_gaps": []}}
 
 **Context:**
 - Research Manager's investment plan: **{research_plan}**
